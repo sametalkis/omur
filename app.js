@@ -55,6 +55,8 @@
       category: 'KARİYER',
       deadline: '2026-10-30',
       image: null,
+      archived: false,
+      archivedAt: null,
       subtasks: [
         { id: 'st-1', title: 'Mimari ve şema tasarımı', completed: true },
         { id: 'st-2', title: 'Prototip ve API entegrasyonu', completed: true },
@@ -68,6 +70,8 @@
       category: 'YAŞAM',
       deadline: '2026-12-31',
       image: null,
+      archived: false,
+      archivedAt: null,
       subtasks: [
         { id: 'st-21', title: 'Her sabah öncelikleri belirle', completed: true },
         { id: 'st-22', title: 'Haftalık değerlendirme defteri tut', completed: true },
@@ -80,6 +84,8 @@
       category: 'GELİŞİM',
       deadline: '2026-11-15',
       image: null,
+      archived: false,
+      archivedAt: null,
       subtasks: [
         { id: 'st-31', title: 'Rust Book ilk 10 bölüm', completed: true },
         { id: 'st-32', title: 'Memory & Concurrency egzersizleri', completed: false },
@@ -92,6 +98,8 @@
       category: 'SAĞLIK',
       deadline: '2026-11-08',
       image: null,
+      archived: false,
+      archivedAt: null,
       subtasks: [
         { id: 'st-41', title: 'Ayakkabı & nabız bandı temin et', completed: true },
         { id: 'st-42', title: 'Haftalık 30km koşu hacmi', completed: false },
@@ -109,6 +117,7 @@
     lifeExpectancy: 80,
     theme: 'light',
     activeCategory: 'ALL',
+    currentView: 'active', // 'active' | 'archive'
     categories: [...DEFAULT_CATEGORIES],
     goals: []
   };
@@ -138,6 +147,12 @@
   const btnThemeToggle = document.getElementById('btnThemeToggle');
   const themeIcon = document.getElementById('themeIcon');
 
+  // Workspace Tabs Elements
+  const tabActiveGoals = document.getElementById('tabActiveGoals');
+  const tabArchivedGoals = document.getElementById('tabArchivedGoals');
+  const activeCountEl = document.getElementById('activeCount');
+  const archiveCountEl = document.getElementById('archiveCount');
+
   // Goal Modal Elements
   const goalModal = document.getElementById('goalModal');
   const goalForm = document.getElementById('goalForm');
@@ -160,6 +175,7 @@
   const btnCloseModal = document.getElementById('btnCloseModal');
   const btnCancelModal = document.getElementById('btnCancelModal');
   const btnDeleteGoal = document.getElementById('btnDeleteGoal');
+  const btnToggleArchiveModal = document.getElementById('btnToggleArchiveModal');
   const modalTitle = document.getElementById('modalTitle');
 
   // Settings Modal Elements
@@ -275,13 +291,33 @@
     return Math.round((completed / subtasks.length) * 100);
   }
 
+  // --- Switch Workspace View (Active vs Archive) ---
+  function switchView(view) {
+    if (state.currentView === view) return;
+    state.currentView = view;
+
+    if (tabActiveGoals && tabArchivedGoals) {
+      const isActive = (view === 'active');
+      tabActiveGoals.classList.toggle('active', isActive);
+      tabActiveGoals.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      tabArchivedGoals.classList.toggle('active', !isActive);
+      tabArchivedGoals.setAttribute('aria-selected', !isActive ? 'true' : 'false');
+    }
+
+    renderCategoryPills();
+    renderGoals();
+  }
+
   // --- Render Category Filter Pills ---
   function renderCategoryPills() {
     if (!categoryPillsEl) return;
     categoryPillsEl.innerHTML = '';
 
+    const isArchiveView = (state.currentView === 'archive');
+    const viewGoals = state.goals.filter(g => isArchiveView ? Boolean(g.archived) : !g.archived);
+
     // "TÜMÜ" master pill
-    const totalCount = state.goals.length;
+    const totalCount = viewGoals.length;
     const allPill = document.createElement('button');
     allPill.type = 'button';
     allPill.className = `category-pill ${state.activeCategory === 'ALL' ? 'active' : ''}`;
@@ -296,7 +332,7 @@
 
     // Each dynamic category with filter button & delete trigger
     state.categories.forEach(cat => {
-      const count = state.goals.filter(g => (g.category || 'GENEL') === cat).length;
+      const count = viewGoals.filter(g => (g.category || 'GENEL') === cat).length;
       const isActive = state.activeCategory === cat;
 
       const group = document.createElement('div');
@@ -450,19 +486,42 @@
     if (!goalsGrid) return;
     goalsGrid.innerHTML = '';
 
+    // Update Counts on Workspace Tabs
+    const activeCount = state.goals.filter(g => !g.archived).length;
+    const archiveCount = state.goals.filter(g => Boolean(g.archived)).length;
+    if (activeCountEl) activeCountEl.textContent = activeCount;
+    if (archiveCountEl) archiveCountEl.textContent = archiveCount;
+
+    const isArchiveView = (state.currentView === 'archive');
+    const viewGoals = state.goals.filter(g => isArchiveView ? Boolean(g.archived) : !g.archived);
+
     // Filter by active category
-    let filteredGoals = state.goals;
+    let filteredGoals = viewGoals;
     if (state.activeCategory !== 'ALL') {
-      filteredGoals = state.goals.filter(g => (g.category || 'GENEL') === state.activeCategory);
+      filteredGoals = viewGoals.filter(g => (g.category || 'GENEL') === state.activeCategory);
     }
 
-    // Bulletproof Empty State
+    // Empty State
     if (!filteredGoals || filteredGoals.length === 0) {
+      if (isArchiveView) {
+        const emptyBoard = document.createElement('div');
+        emptyBoard.className = 'empty-board';
+        const isFiltered = state.activeCategory !== 'ALL';
+        emptyBoard.innerHTML = `
+          <div class="empty-bracket">[ ARŞİV BOŞ ]</div>
+          <h3 class="empty-title">${isFiltered ? `"${escapeHTML(state.activeCategory)}" Kategorisinde Arşiv Yok` : 'Henüz Arşivlenmiş Bir Hedef Yok'}</h3>
+          <p class="empty-desc">${isFiltered ? 'Bu kategoriye ait arşivlenmiş bir hedef bulunmuyor.' : 'Tamamlanan veya odak dışı kalan hedefleri arşivleyerek ana panonuzu sade tutabilirsiniz.'}</p>
+        `;
+        goalsGrid.appendChild(emptyBoard);
+        return;
+      }
+
+      // Active View Empty State
       const emptyCard = document.createElement('div');
       emptyCard.className = 'empty-state-card';
       const isFiltered = state.activeCategory !== 'ALL';
       emptyCard.innerHTML = `
-        <h3 class="empty-title">${isFiltered ? `"${state.activeCategory}" Kategorisinde Hedef Yok` : 'Henüz Bir Hedef Belirlemediniz'}</h3>
+        <h3 class="empty-title">${isFiltered ? `"${escapeHTML(state.activeCategory)}" Kategorisinde Hedef Yok` : 'Henüz Bir Hedef Belirlemediniz'}</h3>
         <p class="empty-desc">Zaman akıp gidiyor. Hayatınızı odaklayacak ve her yeni sekmede yüzleşeceğiniz ilk hedefinizi oluşturun.</p>
         <button type="button" class="btn-empty-add" id="btnEmptyAddGoal">
           + İLK HEDEFİNİZİ EKLEYİN
@@ -480,7 +539,7 @@
     // Render Goal Cards
     filteredGoals.forEach((goal) => {
       const card = document.createElement('article');
-      card.className = 'goal-card';
+      card.className = `goal-card ${goal.archived ? 'is-archived' : ''}`;
       card.dataset.id = goal.id;
 
       const safeTitle = escapeHTML(goal.title);
@@ -539,9 +598,20 @@
         `;
       }
 
+      // Header with optional [ ARŞİV ] badge
+      const archiveBadgeHtml = goal.archived ? `<span class="badge-archived">[ ARŞİV ]</span>` : '';
+
+      // Card action button: "ARŞİVLE" in active view, "PANOMA GERİ TAŞI (UNARCHIVE)" in archive view
+      const archiveActionBtnHtml = goal.archived
+        ? `<button type="button" class="btn-archive-action btn-unarchive-action" data-action="unarchive" data-goal-id="${goal.id}" title="Panoma Geri Taşı">PANOMA GERİ TAŞI (UNARCHIVE)</button>`
+        : `<button type="button" class="btn-archive-action btn-archive-goal" data-action="archive" data-goal-id="${goal.id}" title="Hedefi Arşivle">ARŞİVLE</button>`;
+
       card.innerHTML = `
         <div class="goal-card-header">
-          <span class="goal-cat-tag">// ${safeCat}</span>
+          <div class="goal-header-left">
+            <span class="goal-cat-tag">// ${safeCat}</span>
+            ${archiveBadgeHtml}
+          </div>
           <span class="goal-status-badge">[ %${progress} ]</span>
         </div>
         
@@ -563,7 +633,10 @@
 
         <div class="goal-meta-footer">
           <span class="goal-deadline-label">HEDEF: ${deadlineText}</span>
-          <button type="button" class="goal-edit-btn" data-action="edit">DÜZENLE ↵</button>
+          <div class="goal-actions-group">
+            ${archiveActionBtnHtml}
+            <button type="button" class="goal-edit-btn" data-action="edit">DÜZENLE ↵</button>
+          </div>
         </div>
       `;
 
@@ -595,6 +668,38 @@
           if (targetGoal) {
             targetGoal.image = null;
             await Storage.set('omur_goals', state.goals);
+            renderGoals();
+          }
+        });
+      }
+
+      // Card Archive action button
+      const btnArchive = card.querySelector('[data-action="archive"]');
+      if (btnArchive) {
+        btnArchive.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          const targetGoal = state.goals.find(g => g.id === goal.id);
+          if (targetGoal) {
+            targetGoal.archived = true;
+            targetGoal.archivedAt = new Date().toISOString();
+            await Storage.set('omur_goals', state.goals);
+            renderCategoryPills();
+            renderGoals();
+          }
+        });
+      }
+
+      // Card Unarchive action button
+      const btnUnarchive = card.querySelector('[data-action="unarchive"]');
+      if (btnUnarchive) {
+        btnUnarchive.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          const targetGoal = state.goals.find(g => g.id === goal.id);
+          if (targetGoal) {
+            targetGoal.archived = false;
+            targetGoal.archivedAt = null;
+            await Storage.set('omur_goals', state.goals);
+            renderCategoryPills();
             renderGoals();
           }
         });
@@ -729,7 +834,7 @@
     if (goalImageInput) goalImageInput.value = '';
 
     if (goal) {
-      modalTitle.textContent = 'HEDEFİ DÜZENLE';
+      modalTitle.textContent = goal.archived ? 'HEDEFİ DÜZENLE [ARŞİV]' : 'HEDEFİ DÜZENLE';
       goalIdInput.value = goal.id;
       goalTitleInput.value = goal.title || '';
       goalDeadlineInput.value = goal.deadline || '';
@@ -737,6 +842,17 @@
 
       currentModalSubtasks = goal.subtasks ? JSON.parse(JSON.stringify(goal.subtasks)) : [];
       btnDeleteGoal.hidden = false;
+
+      if (btnToggleArchiveModal) {
+        btnToggleArchiveModal.hidden = false;
+        if (goal.archived) {
+          btnToggleArchiveModal.textContent = 'Arşivden Çıkar';
+          btnToggleArchiveModal.title = 'Hedefi arşivden çıkarıp aktif panoya geri taşır';
+        } else {
+          btnToggleArchiveModal.textContent = 'Arşive Taşı';
+          btnToggleArchiveModal.title = 'Hedefi arşivler';
+        }
+      }
 
       if (goal.image) {
         currentUploadedImage = goal.image;
@@ -762,6 +878,10 @@
       imagePreviewContainer.hidden = true;
       if (imageUploadTriggerArea) imageUploadTriggerArea.hidden = false;
       btnDeleteGoal.hidden = true;
+
+      if (btnToggleArchiveModal) {
+        btnToggleArchiveModal.hidden = true;
+      }
     }
 
     renderModalSubtasks();
@@ -828,9 +948,16 @@
         category,
         deadline,
         subtasks: finalSubtasks,
-        image: currentUploadedImage
+        image: currentUploadedImage,
+        archived: false,
+        archivedAt: null
       };
       state.goals.push(newGoal);
+
+      // Switch to active view if created while in archive view
+      if (state.currentView !== 'active') {
+        switchView('active');
+      }
     }
 
     await Storage.set('omur_goals', state.goals);
@@ -838,6 +965,49 @@
     renderGoals();
     closeGoalModal();
   });
+
+  // Archive / Unarchive Toggle from Modal
+  if (btnToggleArchiveModal) {
+    btnToggleArchiveModal.addEventListener('click', async () => {
+      const id = goalIdInput.value;
+      if (!id) return;
+      const targetGoal = state.goals.find(g => g.id === id);
+      if (!targetGoal) return;
+
+      const willArchive = !targetGoal.archived;
+      targetGoal.archived = willArchive;
+      targetGoal.archivedAt = willArchive ? new Date().toISOString() : null;
+
+      // Also persist form values if user modified them before toggling archive
+      const formTitle = goalTitleInput.value.trim();
+      if (formTitle) targetGoal.title = formTitle;
+
+      let category = goalCategoryInput.value;
+      if (category === '__NEW__') {
+        const inlineCat = inlineCategoryInput.value.trim().toUpperCase();
+        if (inlineCat) {
+          targetGoal.category = inlineCat;
+          if (!state.categories.includes(inlineCat)) {
+            state.categories.push(inlineCat);
+            await Storage.set('omur_categories', state.categories);
+          }
+        }
+      } else if (category) {
+        targetGoal.category = category;
+      }
+
+      targetGoal.deadline = goalDeadlineInput.value;
+      targetGoal.subtasks = currentModalSubtasks
+        .map(s => ({ ...s, title: s.title.trim() }))
+        .filter(s => s.title.length > 0);
+      targetGoal.image = currentUploadedImage;
+
+      await Storage.set('omur_goals', state.goals);
+      renderCategoryPills();
+      renderGoals();
+      closeGoalModal();
+    });
+  }
 
   // Delete Goal
   btnDeleteGoal.addEventListener('click', async () => {
@@ -972,7 +1142,14 @@
     }
   });
 
-  // Persistent Add Buttons
+  // Workspace Tabs & Persistent Add Buttons
+  if (tabActiveGoals) {
+    tabActiveGoals.addEventListener('click', () => switchView('active'));
+  }
+  if (tabArchivedGoals) {
+    tabArchivedGoals.addEventListener('click', () => switchView('archive'));
+  }
+
   btnAddGoal.addEventListener('click', () => openGoalModal(null));
   btnBottomAdd.addEventListener('click', () => openGoalModal(null));
   btnSettings.addEventListener('click', openSettingsModal);
@@ -1024,11 +1201,18 @@
     state.showLifeExpectancy = savedShowLifeExp;
     state.lifeExpectancy = savedLifeExp;
     state.categories = (savedCategories !== null && Array.isArray(savedCategories)) ? savedCategories : DEFAULT_CATEGORIES;
-    state.goals = (savedGoals !== null && Array.isArray(savedGoals)) ? savedGoals : DEFAULT_GOALS;
+    
+    // Normalize loaded goals to ensure archived fields exist
+    const rawGoals = (savedGoals !== null && Array.isArray(savedGoals)) ? savedGoals : DEFAULT_GOALS;
+    state.goals = rawGoals.map(g => ({
+      ...g,
+      archived: Boolean(g.archived),
+      archivedAt: g.archivedAt || null
+    }));
 
     // Seed defaults if fresh installation
     if (savedGoals === null) {
-      await Storage.set('omur_goals', DEFAULT_GOALS);
+      await Storage.set('omur_goals', state.goals);
     }
     if (savedCategories === null) {
       await Storage.set('omur_categories', DEFAULT_CATEGORIES);
