@@ -857,54 +857,56 @@ html, body {
 .goal-actions-group {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.45rem;
 }
 
-.btn-archive-action {
-  background: transparent;
-  border: 1.5px solid var(--border-color);
-  color: var(--ink-primary);
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 700;
-  padding: 0.25rem 0.6rem;
-  cursor: pointer;
-  letter-spacing: 0.03em;
-  transition: all 0.12s ease;
-  white-space: nowrap;
-}
-
-.btn-archive-action:hover {
-  background: var(--ink-primary);
-  color: var(--bg-ground);
-}
-
-.btn-unarchive-action {
-  background: var(--ink-primary);
-  color: var(--bg-ground);
-  border: 1.5px solid var(--border-color);
-  font-weight: 800;
-  box-shadow: var(--shadow-subtle);
-  padding: 0.3rem 0.75rem;
-}
-
-.btn-unarchive-action:hover {
+.goal-action-btn {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
   color: var(--ink-primary);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.12s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.goal-action-btn:hover {
+  background: var(--ink-primary);
+  color: var(--bg-ground);
   transform: translate(-1px, -1px);
   box-shadow: var(--shadow-block);
 }
 
-.goal-edit-btn {
-  background: transparent;
-  border: none;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 700;
+.goal-action-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.goal-action-btn:focus-visible {
+  outline: 2px solid var(--accent-pulse);
+  outline-offset: 1px;
+}
+
+.btn-unarchive-goal {
+  background: var(--ink-primary);
+  color: var(--bg-ground);
+  border-color: var(--ink-primary);
+}
+
+.btn-unarchive-goal:hover {
+  background: var(--bg-card);
   color: var(--ink-primary);
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+}
+
+.icon-card-action {
+  pointer-events: none;
+  display: block;
 }
 
 /* ==========================================================================

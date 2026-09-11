@@ -605,10 +605,32 @@
       // Header with optional [ ARŞİV ] badge
       const archiveBadgeHtml = goal.archived ? `<span class="badge-archived">[ ARŞİV ]</span>` : '';
 
-      // Card action button: "ARŞİVLE" in active view, "PANOMA GERİ TAŞI (UNARCHIVE)" in archive view
+      // Card action buttons as sleek brutalist icons: Archive/Unarchive + Edit
       const archiveActionBtnHtml = goal.archived
-        ? `<button type="button" class="btn-archive-action btn-unarchive-action" data-action="unarchive" data-goal-id="${goal.id}" title="Panoma Geri Taşı">PANOMA GERİ TAŞI (UNARCHIVE)</button>`
-        : `<button type="button" class="btn-archive-action btn-archive-goal" data-action="archive" data-goal-id="${goal.id}" title="Hedefi Arşivle">ARŞİVLE</button>`;
+        ? `<button type="button" class="goal-action-btn btn-unarchive-goal" data-action="unarchive" data-goal-id="${goal.id}" title="Panoma Geri Taşı (Arşivden Çıkar)" aria-label="Panoma Geri Taşı">
+            <svg class="icon-card-action" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
+              <polyline points="21 8 21 21 3 21 3 8"></polyline>
+              <rect x="1" y="3" width="22" height="5"></rect>
+              <polyline points="9 15 12 12 15 15"></polyline>
+              <line x1="12" y1="12" x2="12" y2="18"></line>
+            </svg>
+          </button>`
+        : `<button type="button" class="goal-action-btn btn-archive-goal" data-action="archive" data-goal-id="${goal.id}" title="Hedefi Arşivle" aria-label="Hedefi Arşivle">
+            <svg class="icon-card-action" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
+              <polyline points="21 8 21 21 3 21 3 8"></polyline>
+              <rect x="1" y="3" width="22" height="5"></rect>
+              <line x1="10" y1="12" x2="14" y2="12"></line>
+            </svg>
+          </button>`;
+
+      const editBtnHtml = `
+        <button type="button" class="goal-action-btn goal-edit-btn" data-action="edit" title="Hedefi Düzenle" aria-label="Hedefi Düzenle">
+          <svg class="icon-card-action" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+          </svg>
+        </button>
+      `;
 
       card.innerHTML = `
         <div class="goal-card-header">
@@ -639,7 +661,7 @@
           <span class="goal-deadline-label">HEDEF: ${deadlineText}</span>
           <div class="goal-actions-group">
             ${archiveActionBtnHtml}
-            <button type="button" class="goal-edit-btn" data-action="edit">DÜZENLE ↵</button>
+            ${editBtnHtml}
           </div>
         </div>
       `;
