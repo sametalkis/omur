@@ -72,9 +72,9 @@ html, body {
 
 /* Shell Layout */
 .terminal-shell {
-  max-width: 1440px;
+  max-width: 1720px;
   margin: 0 auto;
-  padding: 1.5rem 2rem 3rem 2rem;
+  padding: clamp(1rem, 2.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -523,15 +523,55 @@ html, body {
   gap: 1.5rem;
 }
 
-@media (max-width: 1080px) {
+/* Ultrawide monitors */
+@media (min-width: 1721px) {
   .goals-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 720px) {
+/* Large monitors / laptops */
+@media (max-width: 1200px) {
+  .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Tablets & narrow screens */
+@media (max-width: 768px) {
   .goals-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Portrait / Vertical Monitors (e.g. 1080x1920, 1440x2560) */
+@media (orientation: portrait), (max-aspect-ratio: 1/1) {
+  .counter-horizon {
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .monumental-number {
+    font-size: clamp(2.2rem, 5.5vw, 4.8rem);
+  }
+}
+
+/* Portrait monitors with width >= 900px (clean 2-column waterfall) */
+@media (orientation: portrait) and (min-width: 900px), (max-aspect-ratio: 1/1) and (min-width: 900px) {
+  .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Portrait screens with width < 768px */
+@media (orientation: portrait) and (max-width: 768px), (max-aspect-ratio: 1/1) and (max-width: 768px) {
+  .goals-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
@@ -544,6 +584,7 @@ html, body {
   flex-direction: column;
   gap: 0.9rem;
   position: relative;
+  min-height: 260px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -680,6 +721,9 @@ html, body {
   background: var(--bg-ground);
   border: 1px solid var(--border-subtle);
   padding: 0.6rem 0.75rem;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .subtask-card-item {
@@ -860,7 +904,7 @@ html, body {
 .modal-window {
   width: 100%;
   max-width: 520px;
-  max-height: 92vh;
+  max-height: 90vh;
   overflow-y: auto;
   background-color: var(--bg-card);
   border: 2.5px solid var(--border-color);
