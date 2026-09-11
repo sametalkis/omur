@@ -218,6 +218,18 @@
           <span class="field-hint">Kategorilerin yanındaki [×] butonuna basarak silebilirsiniz.</span>
         </div>
 
+        <!-- Data Backup & Transfer Section -->
+        <div class="form-field">
+          <label>Veri Yedekleme &amp; Aktarım</label>
+          <div class="backup-actions-row">
+            <button type="button" class="btn-backup" id="btnExportData">↓ YEDEĞİ İNDİR (JSON)</button>
+            <button type="button" class="btn-backup" id="btnImportTrigger">↑ YEDEKTEN YÜKLE (JSON)</button>
+            <input type="file" id="importFileInput" accept=".json,application/json" style="display: none;">
+          </div>
+          <span class="field-hint">Tüm hedeflerinizi, alt görevleri, doğum tarihinizi ve kategorilerinizi tek bir JSON dosyası olarak kaydedebilir veya geri yükleyebilirsiniz.</span>
+          <div id="importFeedback" class="import-feedback" hidden></div>
+        </div>
+
         <div class="modal-action-row">
           <div></div>
           <div class="action-right">
