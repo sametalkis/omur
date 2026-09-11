@@ -175,6 +175,10 @@
   const btnCloseSettings = document.getElementById('btnCloseSettings');
   const btnCancelSettings = document.getElementById('btnCancelSettings');
   const settingsCatList = document.getElementById('settingsCatList');
+  const btnExportData = document.getElementById('btnExportData');
+  const btnImportTrigger = document.getElementById('btnImportTrigger');
+  const importFileInput = document.getElementById('importFileInput');
+  const importFeedback = document.getElementById('importFeedback');
 
   const TICK_COUNT = 60;
   let tickElements = [];
@@ -899,12 +903,20 @@
     lifeExpectancyInput.value = state.lifeExpectancy || 80;
     lifeExpVal.textContent = state.lifeExpectancy || 80;
     renderSettingsCategories();
+    if (importFeedback) {
+      importFeedback.hidden = true;
+      importFeedback.textContent = '';
+    }
     settingsModal.hidden = false;
     birthDateInput.focus();
   }
 
   function closeSettingsModal() {
     settingsModal.hidden = true;
+    if (importFeedback) {
+      importFeedback.hidden = true;
+      importFeedback.textContent = '';
+    }
   }
 
   // Toggle estimated life expectancy visibility in settings
@@ -962,6 +974,191 @@
   settingsModal.addEventListener('click', (e) => {
     if (e.target === settingsModal) closeSettingsModal();
   });
+
+  // --- Data Backup & Transfer (Export & Import JSON) ---
+  if (btnExportData) {
+    btnExportData.addEventListener('click', () => {
+      try {
+        const exportObj = {
+          version: "1.1.0",
+          appName: "Ömür",
+          exportedAt: new Date().toISOString(),
+          data: {
+            birthDate: state.birthDate,
+            showLifeExpectancy: state.showLifeExpectancy,
+            lifeExpectancy: state.lifeExpectancy,
+            theme: state.theme,
+            categories: state.categories,
+            goals: state.goals
+          }
+        };
+
+        const jsonStr = JSON.stringify(exportObj, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const dateStr = new Date().toISOString().split('T')[0];
+        a.download = `omur-yedek-${dateStr}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        if (importFeedback) {
+          importFeedback.hidden = false;
+          importFeedback.className = 'import-feedback success';
+          importFeedback.textContent = 'Yedek başarıyla oluşturuldu ve indirildi.';
+          setTimeout(() => {
+            if (importFeedback) importFeedback.hidden = true;
+          }, 4000);
+        }
+      } catch (err) {
+        console.error('Yedek dışa aktarma hatası:', err);
+        alert('Yedek dışa aktarılırken bir hata oluştu: ' + (err.message || 'Bilinmeyen hata'));
+      }
+    });
+  }
+
+  if (btnImportTrigger && importFileInput) {
+    btnImportTrigger.addEventListener('click', () => {
+      importFileInput.click();
+    });
+
+    importFileInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = async (event) => {
+        try {
+          const content = event.target.result;
+          let parsed;
+          try {
+            parsed = JSON.parse(content);
+          } catch (jsonErr) {
+            throw new Error('Dosya geçerli bir JSON formatında değil.');
+          }
+
+          if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+            throw new Error('Geçersiz yedek yapısı. JSON bir nesne olmalıdır.');
+          }
+
+          // Support standard format (inside `data`) or root-level properties (backward compatibility)
+          const backupData = (parsed.data && typeof parsed.data === 'object' && !Array.isArray(parsed.data))
+            ? parsed.data
+            : parsed;
+
+          // Validate goals: must be array if present
+          if (backupData.goals !== undefined && !Array.isArray(backupData.goals)) {
+            throw new Error('Yedek dosyasındaki hedef listesi (goals) geçerli bir dizi değil.');
+          }
+
+          // Validate categories: must be array if present
+          if (backupData.categories !== undefined && !Array.isArray(backupData.categories)) {
+            throw new Error('Yedek dosyasındaki kategori listesi (categories) geçerli bir dizi değil.');
+          }
+
+          const confirmed = window.confirm(
+            "Bu işlem mevcut tüm hedeflerinizi ve ayarlarınızı içe aktarılan yedekle değiştirecektir. Devam etmek istiyor musunuz?"
+          );
+          if (!confirmed) {
+            importFileInput.value = '';
+            return;
+          }
+
+          // Update state values if present
+          if (backupData.birthDate !== undefined) {
+            state.birthDate = String(backupData.birthDate);
+          }
+          if (backupData.showLifeExpectancy !== undefined) {
+            state.showLifeExpectancy = Boolean(backupData.showLifeExpectancy);
+          }
+          if (backupData.lifeExpectancy !== undefined) {
+            state.lifeExpectancy = parseInt(backupData.lifeExpectancy, 10) || 80;
+          }
+          if (backupData.theme !== undefined) {
+            state.theme = backupData.theme === 'dark' ? 'dark' : 'light';
+          }
+          if (backupData.categories !== undefined) {
+            state.categories = [...backupData.categories];
+          }
+          if (backupData.goals !== undefined) {
+            state.goals = [...backupData.goals];
+          }
+
+          // Ensure active category remains valid
+          if (state.activeCategory !== 'ALL' && !state.categories.includes(state.activeCategory)) {
+            state.activeCategory = 'ALL';
+          }
+
+          // Save all keys to Storage.set
+          await Storage.set('omur_birth_date', state.birthDate);
+          await Storage.set('omur_show_life_exp', state.showLifeExpectancy);
+          await Storage.set('omur_life_expectancy', state.lifeExpectancy);
+          await Storage.set('omur_theme', state.theme);
+          await Storage.set('omur_categories', state.categories);
+          await Storage.set('omur_goals', state.goals);
+
+          // Apply theme (applyTheme)
+          applyTheme(state.theme);
+
+          // Update inputs in settings modal
+          if (birthDateInput) birthDateInput.value = state.birthDate || '';
+          if (enableLifeExpToggle) {
+            enableLifeExpToggle.checked = state.showLifeExpectancy;
+          }
+          if (lifeExpSliderContainer) {
+            lifeExpSliderContainer.hidden = !state.showLifeExpectancy;
+          }
+          if (lifeExpectancyInput) {
+            lifeExpectancyInput.value = state.lifeExpectancy || 80;
+          }
+          if (lifeExpVal) {
+            lifeExpVal.textContent = state.lifeExpectancy || 80;
+          }
+
+          // Re-render category pills, goals, and settings categories
+          renderCategoryPills();
+          renderGoals();
+          renderSettingsCategories();
+
+          // Show success feedback in importFeedback and/or alert ("Yedek başarıyla yüklendi!")
+          if (importFeedback) {
+            importFeedback.hidden = false;
+            importFeedback.className = 'import-feedback success';
+            importFeedback.textContent = 'Yedek başarıyla yüklendi!';
+            setTimeout(() => {
+              if (importFeedback) importFeedback.hidden = true;
+            }, 4000);
+          }
+          alert("Yedek başarıyla yüklendi!");
+        } catch (err) {
+          console.error('Yedek yükleme hatası:', err);
+          if (importFeedback) {
+            importFeedback.hidden = false;
+            importFeedback.className = 'import-feedback error';
+            importFeedback.textContent = `Hata: ${err.message || 'Geçersiz dosya'}`;
+          }
+          alert(`Yedek yükleme başarısız: ${err.message || 'Geçersiz dosya'}`);
+        } finally {
+          importFileInput.value = '';
+        }
+      };
+
+      reader.onerror = () => {
+        if (importFeedback) {
+          importFeedback.hidden = false;
+          importFeedback.className = 'import-feedback error';
+          importFeedback.textContent = 'Dosya okunamadı.';
+        }
+        alert('Dosya okunamadı.');
+        importFileInput.value = '';
+      };
+
+      reader.readAsText(file);
+    });
+  }
 
   // Direct Click on Counter Horizon Opens Settings Modal!
   counterHero.addEventListener('click', openSettingsModal);

@@ -1291,3 +1291,78 @@ html, body {
   background: var(--accent-danger);
   color: #FFFFFF;
 }
+
+/* ==========================================================================
+   BACKUP & DATA TRANSFER (JSON EXPORT/IMPORT)
+   ========================================================================== */
+.backup-actions-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.btn-backup {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.85rem;
+  background-color: var(--bg-ground);
+  color: var(--ink-primary);
+  border: 1.5px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+}
+
+.btn-backup:hover {
+  background-color: var(--ink-primary);
+  color: var(--bg-ground);
+  box-shadow: var(--shadow-block);
+  transform: translate(-1px, -1px);
+}
+
+.btn-backup:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.import-feedback {
+  margin-top: 0.6rem;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--ink-primary);
+  display: block;
+}
+
+.import-feedback[hidden] {
+  display: none !important;
+}
+
+.import-feedback.success {
+  background-color: var(--ink-primary);
+  color: var(--bg-ground);
+  border-color: var(--ink-primary);
+}
+
+.import-feedback.error {
+  border-color: var(--accent-danger);
+  color: var(--accent-danger);
+  background-color: rgba(193, 18, 31, 0.08);
+}
+
+@media (max-width: 520px) {
+  .backup-actions-row {
+    flex-direction: column;
+  }
+}
+
