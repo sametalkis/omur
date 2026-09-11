@@ -52,7 +52,10 @@
     <!-- Workspace Controls & Dynamic Category Filter Bar -->
     <section class="workspace-nav">
       <div class="workspace-header-row">
-        <div class="workspace-title">HEDEFLER &amp; VİZYON PANOSU</div>
+        <div class="workspace-tabs" role="tablist">
+          <button type="button" class="workspace-tab active" id="tabActiveGoals" role="tab" aria-selected="true">AKTİF HEDEFLER (<span id="activeCount">0</span>)</button>
+          <button type="button" class="workspace-tab" id="tabArchivedGoals" role="tab" aria-selected="false">ARŞİV (<span id="archiveCount">0</span>)</button>
+        </div>
         <button type="button" class="btn-add-primary" id="btnAddGoal">
           + YENİ HEDEF EKLE
         </button>
@@ -154,7 +157,10 @@
         </div>
 
         <div class="modal-action-row">
-          <button type="button" class="btn-modal-danger" id="btnDeleteGoal">Hedefi Sil</button>
+          <div class="action-left">
+            <button type="button" class="btn-modal-danger" id="btnDeleteGoal">Hedefi Sil</button>
+            <button type="button" class="btn-modal-archive" id="btnToggleArchiveModal">Arşive Taşı</button>
+          </div>
           <div class="action-right">
             <button type="button" class="btn-modal-cancel" id="btnCancelModal">İptal</button>
             <button type="submit" class="btn-modal-submit">KAYDET</button>
