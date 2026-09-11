@@ -1,0 +1,410 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-08T13:08:58.623Z",
+  "comp": ".impeccable/mocks/comp-b-sequence.jpg",
+  "direction": "39942e53",
+  "breakpoint": "1376x768",
+  "artifact": null,
+  "phase": "review",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-09-08T13:08:58.623Z",
+      "closedAt": "2026-09-08T13:15:27.965Z",
+      "attempts": 4,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/comp-b-sequence.jpg",
+        "at": "2026-09-08T13:15:27.965Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-09-08T13:15:28.171Z",
+      "closedAt": "2026-09-08T13:23:30.109Z",
+      "attempts": 4,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "20 regions, 11 plates, 6 text regions measured",
+        "at": "2026-09-08T13:23:30.109Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-09-08T13:23:30.109Z",
+      "closedAt": "2026-09-08T13:34:01.857Z",
+      "attempts": 6,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "11/11 plates",
+        "at": "2026-09-08T13:34:01.857Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "closed",
+      "openedAt": "2026-09-08T13:34:01.857Z",
+      "closedAt": "2026-09-08T14:01:01.756Z",
+      "attempts": 4,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "hero 79% (drift)",
+        "score": 0.7941,
+        "verdict": "drift",
+        "report": ".impeccable/review/diff/hero/report.json",
+        "sideBySide": "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/side-by-side.png",
+        "worst": [
+          "washi-ground drift 44%",
+          "card-6-figure drift 48%",
+          "card-5-figure drift 50%"
+        ],
+        "worstIds": [
+          "washi-ground",
+          "card-6-figure",
+          "card-5-figure"
+        ],
+        "worstCrops": [
+          {
+            "id": "washi-ground",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.4385,
+              "structure": 0.9763,
+              "color": 0.8127,
+              "colorIntersection": 0.6236,
+              "paletteMatch": 0.9146,
+              "detail": 0.0151,
+              "detailRaw": 0.0151,
+              "detailAdded": 0,
+              "bands": 1
+            },
+            "file": ".impeccable/review/diff/hero/regions/washi-ground.png"
+          },
+          {
+            "id": "card-6-figure",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.4784,
+              "structure": 0.6842,
+              "color": 0.75,
+              "colorIntersection": 0.5487,
+              "paletteMatch": 0.8583,
+              "detail": 0.2746,
+              "detailRaw": 0.3319,
+              "detailAdded": 0.1146,
+              "bands": 0.4
+            },
+            "file": ".impeccable/review/diff/hero/regions/card-6-figure.png"
+          },
+          {
+            "id": "card-5-figure",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.5,
+              "structure": 0.5642,
+              "color": 0.7667,
+              "colorIntersection": 0.5997,
+              "paletteMatch": 0.8566,
+              "detail": 0.3597,
+              "detailRaw": 0.4587,
+              "detailAdded": 0.1979,
+              "bands": 0.5143
+            },
+            "file": ".impeccable/review/diff/hero/regions/card-5-figure.png"
+          }
+        ],
+        "regionVerdicts": {
+          "washi-ground": "drift",
+          "age-counter": "drift",
+          "gold-dot": "drift",
+          "crease-line": "drift",
+          "card-1-plate": "drift",
+          "card-2-figure": "drift",
+          "card-2-text": "drift",
+          "card-3-figure": "drift",
+          "card-3-text": "drift",
+          "card-4-figure": "drift",
+          "card-4-text": "drift",
+          "card-5-figure": "drift",
+          "card-5-text": "drift",
+          "card-6-figure": "drift",
+          "dashed-crease": "drift",
+          "card-2-diagram": "drift",
+          "card-3-diagram": "drift",
+          "card-4-diagram": "drift",
+          "card-5-diagram": "drift",
+          "hedef-ekle": "drift"
+        },
+        "at": "2026-09-08T14:05:38.846Z"
+      },
+      "forced": null,
+      "records": 13,
+      "readingsSeen": {
+        "chrome crease-line: its rule sits 1px into the box in the comp and 35px in the build (+34px), so the strip is taller than the comp's; match the height, not only the position": 1,
+        "text card-4-text: cap height 15.9px in the build, 42px in the comp (-62%); set font-size so the cap height renders at 42px (font-match ranked Barrio 400 at 59px)": 1,
+        "text hedef-ekle: ink is #281818 in the build, #6c100d in the comp; use the comp's colour": 1,
+        "text card-4-text: cap height 13.8px in the build, 42px in the comp (-67%); set font-size so the cap height renders at 42px (font-match ranked Barrio 400 at 59px)": 2,
+        "text card-4-text: cap height 25.8px in the build, 42px in the comp (-39%); set font-size so the cap height renders at 42px (font-match ranked Barrio 400 at 59px)": 1,
+        "text card-4-text: cap height 14.8px in the build, 42px in the comp (-65%); set font-size so the cap height renders at 42px (font-match ranked Barrio 400 at 59px)": 6,
+        "text card-4-text: cap height 24.5px in the build, 42px in the comp (-42%); set font-size so the cap height renders at 42px (font-match ranked Barrio 400 at 59px)": 4
+      },
+      "history": [
+        {
+          "at": "2026-09-08T13:40:07.798Z",
+          "score": 0.7209,
+          "worstIds": [
+            "card-2-figure",
+            "card-5-figure",
+            "card-4-figure"
+          ],
+          "regionVerdicts": {
+            "washi-ground": "drift",
+            "age-counter": "drift",
+            "gold-dot": "drift",
+            "crease-line": "drift",
+            "card-1-plate": "drift",
+            "card-2-figure": "missing",
+            "card-2-text": "drift",
+            "card-3-figure": "missing",
+            "card-3-text": "drift",
+            "card-4-figure": "missing",
+            "card-4-text": "drift",
+            "card-5-figure": "missing",
+            "card-5-text": "drift",
+            "card-6-figure": "missing",
+            "dashed-crease": "drift",
+            "card-2-diagram": "drift",
+            "card-3-diagram": "drift",
+            "card-4-diagram": "drift",
+            "card-5-diagram": "drift",
+            "hedef-ekle": "missing"
+          },
+          "artifactHash": "d723a107ceb7"
+        },
+        {
+          "at": "2026-09-08T13:52:50.148Z",
+          "score": 0.7739,
+          "worstIds": [
+            "washi-ground",
+            "age-counter",
+            "card-6-figure"
+          ],
+          "regionVerdicts": {
+            "washi-ground": "drift",
+            "age-counter": "drift",
+            "gold-dot": "drift",
+            "crease-line": "match",
+            "card-1-plate": "drift",
+            "card-2-figure": "drift",
+            "card-2-text": "drift",
+            "card-3-figure": "drift",
+            "card-3-text": "drift",
+            "card-4-figure": "drift",
+            "card-4-text": "drift",
+            "card-5-figure": "drift",
+            "card-5-text": "drift",
+            "card-6-figure": "drift",
+            "dashed-crease": "drift",
+            "card-2-diagram": "drift",
+            "card-3-diagram": "drift",
+            "card-4-diagram": "drift",
+            "card-5-diagram": "drift",
+            "hedef-ekle": "drift"
+          },
+          "artifactHash": "62ff94a5a9f8"
+        },
+        {
+          "at": "2026-09-08T13:57:47.725Z",
+          "score": 0.7801,
+          "worstIds": [
+            "washi-ground",
+            "age-counter",
+            "card-6-figure"
+          ],
+          "regionVerdicts": {
+            "washi-ground": "drift",
+            "age-counter": "drift",
+            "gold-dot": "drift",
+            "crease-line": "match",
+            "card-1-plate": "drift",
+            "card-2-figure": "drift",
+            "card-2-text": "drift",
+            "card-3-figure": "drift",
+            "card-3-text": "drift",
+            "card-4-figure": "drift",
+            "card-4-text": "drift",
+            "card-5-figure": "drift",
+            "card-5-text": "drift",
+            "card-6-figure": "drift",
+            "dashed-crease": "drift",
+            "card-2-diagram": "drift",
+            "card-3-diagram": "drift",
+            "card-4-diagram": "drift",
+            "card-5-diagram": "drift",
+            "hedef-ekle": "drift"
+          },
+          "artifactHash": "62ff94a5a9f8"
+        },
+        {
+          "at": "2026-09-08T14:01:01.756Z",
+          "score": 0.7936,
+          "worstIds": [
+            "washi-ground",
+            "card-6-figure",
+            "card-5-figure"
+          ],
+          "regionVerdicts": {
+            "washi-ground": "drift",
+            "age-counter": "drift",
+            "gold-dot": "drift",
+            "crease-line": "match",
+            "card-1-plate": "drift",
+            "card-2-figure": "drift",
+            "card-2-text": "drift",
+            "card-3-figure": "drift",
+            "card-3-text": "drift",
+            "card-4-figure": "drift",
+            "card-4-text": "drift",
+            "card-5-figure": "drift",
+            "card-5-text": "drift",
+            "card-6-figure": "drift",
+            "dashed-crease": "drift",
+            "card-2-diagram": "drift",
+            "card-3-diagram": "drift",
+            "card-4-diagram": "drift",
+            "card-5-diagram": "drift",
+            "hedef-ekle": "drift"
+          },
+          "artifactHash": "62ff94a5a9f8"
+        }
+      ]
+    },
+    "sections": {
+      "status": "closed",
+      "openedAt": "2026-09-08T14:01:01.756Z",
+      "closedAt": "2026-09-08T14:01:19.702Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-09-08T14:01:19.702Z"
+      },
+      "forced": null
+    },
+    "motion": {
+      "status": "closed",
+      "openedAt": "2026-09-08T14:01:19.702Z",
+      "closedAt": "2026-09-08T14:01:59.556Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-09-08T14:01:59.556Z"
+      },
+      "forced": null
+    },
+    "responsive": {
+      "status": "closed",
+      "openedAt": "2026-09-08T14:01:59.556Z",
+      "closedAt": "2026-09-08T14:05:40.738Z",
+      "attempts": 3,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "desktop 78% (drift)",
+        "score": 0.7842,
+        "sideBySide": "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/desktop/side-by-side.png",
+        "at": "2026-09-08T14:05:40.738Z"
+      },
+      "forced": null
+    },
+    "review": {
+      "status": "closed",
+      "openedAt": "2026-09-08T14:05:40.738Z",
+      "closedAt": "2026-09-08T14:09:29.558Z",
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": {
+    "disposition": "ship",
+    "at": "2026-09-08T14:09:29.558Z",
+    "phaseAtFinish": "review"
+  },
+  "plates": {
+    "washi-ground": {
+      "status": "ok",
+      "score": 1,
+      "size": "138x154"
+    },
+    "card-1-plate": {
+      "status": "ok",
+      "score": 0.4376,
+      "size": "550x460"
+    },
+    "card-2-figure": {
+      "status": "ok",
+      "score": 0.9226,
+      "size": "550x308"
+    },
+    "card-3-figure": {
+      "status": "ok",
+      "score": 0.9124,
+      "size": "276x308"
+    },
+    "card-4-figure": {
+      "status": "ok",
+      "score": 0.9032,
+      "size": "550x308"
+    },
+    "card-5-figure": {
+      "status": "ok",
+      "score": 0.9336,
+      "size": "550x308"
+    },
+    "card-6-figure": {
+      "status": "ok",
+      "score": 0.5194,
+      "size": "550x460"
+    },
+    "card-2-diagram": {
+      "status": "ok",
+      "score": 0.4984,
+      "size": "550x154"
+    },
+    "card-3-diagram": {
+      "status": "ok",
+      "score": 0.5344,
+      "size": "276x154"
+    },
+    "card-4-diagram": {
+      "status": "ok",
+      "score": 0.4939,
+      "size": "550x154"
+    },
+    "card-5-diagram": {
+      "status": "ok",
+      "score": 0.489,
+      "size": "276x154"
+    }
+  }
+}

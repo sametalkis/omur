@@ -1,0 +1,136 @@
+{
+  "regions": [
+    {
+      "id": "washi-ground",
+      "kind": "texture",
+      "grid": "A0:A1",
+      "note": "Vermilion washi paper texture with visible kozo fiber — the page ground material"
+    },
+    {
+      "id": "age-counter",
+      "kind": "text",
+      "grid": "C1:I4",
+      "note": "Monumental age counter '23.604812' in heavy sumi-black numerals"
+    },
+    {
+      "id": "gold-dot",
+      "kind": "control",
+      "grid": "D3:D3",
+      "note": "Small gold dot at the decimal point of the age counter"
+    },
+    {
+      "id": "crease-line",
+      "kind": "chrome",
+      "grid": "A5:J5",
+      "note": "Horizontal fold-white crease line spanning full width, separating counter from goals"
+    },
+    {
+      "id": "card-1-plate",
+      "kind": "plate",
+      "grid": "A6:B8",
+      "bleed": true,
+      "note": "First origami stage: flat red square on washi-cream card — a vermilion square with thin frame lines, contained by the card boundary"
+    },
+    {
+      "id": "card-2-figure",
+      "kind": "plate",
+      "grid": "C6:D7",
+      "bleed": true,
+      "note": "Second origami stage: red diamond shape (first fold), contained within its card panel"
+    },
+    {
+      "id": "card-2-text",
+      "kind": "text",
+      "grid": "C6:D6",
+      "snap": false,
+      "note": "Goal title 'Flat the goal' on card 2 in humanist sans"
+    },
+    {
+      "id": "card-3-figure",
+      "kind": "plate",
+      "grid": "E6:E7",
+      "bleed": true,
+      "note": "Third origami stage: diamond with visible fold creases, contained within its card panel"
+    },
+    {
+      "id": "card-3-text",
+      "kind": "text",
+      "grid": "E6:E6",
+      "snap": false,
+      "note": "Goal title 'Seeing the goal' on card 3"
+    },
+    {
+      "id": "card-4-figure",
+      "kind": "plate",
+      "grid": "F6:G7",
+      "bleed": true,
+      "note": "Fourth origami stage: preliminary base shape with raised points, contained within its card panel"
+    },
+    {
+      "id": "card-4-text",
+      "kind": "text",
+      "grid": "F6:G6",
+      "snap": false,
+      "note": "Goal title 'Folding goal' on card 4"
+    },
+    {
+      "id": "card-5-figure",
+      "kind": "plate",
+      "grid": "H6:I7",
+      "bleed": true,
+      "note": "Fifth origami stage: two cranes emerging from bird base, contained within its card panel"
+    },
+    {
+      "id": "card-5-text",
+      "kind": "text",
+      "grid": "H6:I6",
+      "snap": false,
+      "note": "Goal title 'Origami crane' on card 5"
+    },
+    {
+      "id": "card-6-figure",
+      "kind": "plate",
+      "grid": "I6:J8",
+      "bleed": true,
+      "note": "Final origami stage: completed crane with spread wings, smaller crane beside it"
+    },
+    {
+      "id": "dashed-crease",
+      "kind": "chrome",
+      "grid": "C7:I7",
+      "note": "Horizontal dashed fold-white crease line connecting all goal cards in sequence"
+    },
+    {
+      "id": "card-2-diagram",
+      "kind": "plate",
+      "grid": "C8:D8",
+      "note": "Small crease-pattern line diagram showing fold pattern for card 2"
+    },
+    {
+      "id": "card-3-diagram",
+      "kind": "plate",
+      "grid": "E8:E8",
+      "bleed": true,
+      "note": "Small crease-pattern line diagram for card 3"
+    },
+    {
+      "id": "card-4-diagram",
+      "kind": "plate",
+      "grid": "F8:G8",
+      "note": "Small crease-pattern line diagram for card 4"
+    },
+    {
+      "id": "card-5-diagram",
+      "kind": "plate",
+      "grid": "H8:H8",
+      "bleed": true,
+      "note": "Small crease-pattern line diagram for card 5"
+    },
+    {
+      "id": "hedef-ekle",
+      "kind": "text",
+      "grid": "E9:F9",
+      "note": "'HEDEF EKLE' action label in small tracked caps, ink-fade gray"
+    }
+  ]
+}

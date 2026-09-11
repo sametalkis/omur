@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ömür</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Work+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/icons/icon-32.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="terminal-shell">
+    
+    <!-- Top Utility Bar -->
+    <header class="utility-bar">
+      <div class="brand-telemetry">
+        <span class="telemetry-pill">ÖMÜR</span>
+        <span class="telemetry-stat" id="lifeRatioDisplay" hidden>ÖMÜR: %00.000</span>
+      </div>
+      <div class="utility-actions">
+        <button type="button" class="btn-theme-toggle" id="btnThemeToggle" title="Tema Değiştir (E-Ink Kağıt / Gece Modu)">
+          <span id="themeIcon">☼ E-INK</span>
+        </button>
+        <button type="button" class="btn-util" id="btnSettings" title="Doğum Tarihi ve Yaş Ayarları">
+          ⚙ AYARLAR
+        </button>
+      </div>
+    </header>
+
+    <!-- Monumental Age Counter Horizon (Clickable to change age) -->
+    <section class="counter-horizon" id="counterHero" role="button" tabindex="0" title="Yaşınızı veya Doğum Tarihinizi Düzenlemek İçin Tıklayın">
+      <!-- Fixed 9 Decimals Age Display -->
+      <div class="monumental-number" id="counterDisplay">
+        <span id="ageInt">00</span><span class="counter-dot">.</span><span id="ageDec">000000000</span>
+      </div>
+      
+      <!-- Continuous Micro-Ticker Progression Strip (Zamanın Sürekli Akış Hissi) -->
+      <div class="micro-ticker-strip">
+        <div class="ticker-ruler" id="tickerRuler"></div>
+        <div class="ticker-sweep-needle" id="tickerSweepNeedle"></div>
+      </div>
+      
+      <div class="ticker-meta-row">
+        <span class="meta-item" id="metaDays">GÜN: 0000</span>
+        <span class="meta-item" id="metaClock">00:00:00</span>
+        <span class="meta-item" id="metaYearProgress">YILIN %00.0'I BİTTİ</span>
+      </div>
+    </section>
+
+    <!-- Workspace Controls & Dynamic Category Filter Bar -->
+    <section class="workspace-nav">
+      <div class="workspace-header-row">
+        <div class="workspace-title">HEDEFLER &amp; VİZYON PANOSU</div>
+        <button type="button" class="btn-add-primary" id="btnAddGoal">
+          + YENİ HEDEF EKLE
+        </button>
+      </div>
+
+      <!-- Category Filter Pills & Add Category Action -->
+      <div class="category-filter-bar">
+        <div class="category-pills" id="categoryPills">
+          <!-- Populated dynamically by app.js -->
+        </div>
+        <button type="button" class="btn-new-category" id="btnNewCategory" title="Yeni Kategori Oluştur">
+          + KATEGORİ EKLE
+        </button>
+      </div>
+    </section>
+
+    <!-- Dynamic Goals Matrix (3-Column Brutalist Layout) -->
+    <main class="goals-viewport">
+      <div class="goals-grid" id="goalsGrid">
+        <!-- Rendered by app.js -->
+      </div>
+    </main>
+
+    <!-- Bottom Action Bar (Guarantees add button is always accessible) -->
+    <footer class="bottom-bar">
+      <button type="button" class="btn-footer-add" id="btnBottomAdd">
+        + HEDEF EKLE
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- Goal Creation & Edit Modal -->
+  <div class="modal-backdrop" id="goalModal" hidden>
+    <div class="modal-window modal-window-large" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">HEDEF DÜZENLE</h2>
+        <button type="button" class="btn-modal-close" id="btnCloseModal" aria-label="Kapat">&times;</button>
+      </div>
+      <form id="goalForm">
+        <input type="hidden" id="goalId">
+        
+        <div class="form-field">
+          <label for="goalTitleInput">Hedef Başlığı</label>
+          <input type="text" id="goalTitleInput" required maxlength="60" placeholder="Örn: 100km Maraton Koş veya Şirket Kur">
+        </div>
+
+        <div class="form-row-split">
+          <div class="form-field flex-1">
+            <label for="goalCategoryInput">Kategori</label>
+            <div class="category-select-wrapper">
+              <select id="goalCategoryInput" required>
+                <!-- Filled dynamically -->
+              </select>
+            </div>
+            <!-- Inline new category input if selected -->
+            <input type="text" id="inlineCategoryInput" placeholder="Yeni kategori adı yazın..." maxlength="25" hidden style="margin-top: 0.4rem;">
+          </div>
+
+          <div class="form-field flex-1">
+            <label for="goalDeadlineInput">Hedef Tarihi (Takvim)</label>
+            <input type="date" id="goalDeadlineInput">
+          </div>
+        </div>
+
+        <!-- Sub-tasks (Alt Hedefler) Section -> Controls Progress Automatically! -->
+        <div class="subtasks-section">
+          <div class="subtasks-header-row">
+            <div>
+              <span class="subtasks-title">ALT HEDEFLER &amp; ADIMLAR</span>
+              <span class="subtasks-hint">(İlerleme otomatik hesaplanır)</span>
+            </div>
+            <span class="subtasks-summary-badge" id="subtaskSummaryBadge">%0 (0/0)</span>
+          </div>
+
+          <div class="subtasks-list" id="subtasksContainer">
+            <!-- Dynamic subtask rows -->
+          </div>
+
+          <div class="add-subtask-row">
+            <input type="text" id="newSubtaskInput" placeholder="+ Yeni bir alt hedef / adım yazın (Enter)..." maxlength="60">
+            <button type="button" class="btn-add-subtask" id="btnAddSubtask">+ EKLE</button>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Hedef Görseli (Opsiyonel)</label>
+          <input type="file" id="goalImageInput" accept="image/*" style="display: none;">
+          <div id="imageUploadTriggerArea" class="image-upload-trigger-area">
+            <button type="button" class="btn-select-img" id="btnSelectImage">+ GÖRSEL SEÇ VEYA YÜKLE</button>
+          </div>
+          <div id="imagePreviewContainer" class="image-preview-area" hidden>
+            <img id="imagePreviewEl" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Önizleme" class="preview-thumb">
+            <div class="image-preview-actions">
+              <button type="button" class="btn-change-img" id="btnChangeImage">Değiştir</button>
+              <button type="button" class="btn-remove-img" id="btnRemoveImage">Görseli Kaldır</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-action-row">
+          <button type="button" class="btn-modal-danger" id="btnDeleteGoal">Hedefi Sil</button>
+          <div class="action-right">
+            <button type="button" class="btn-modal-cancel" id="btnCancelModal">İptal</button>
+            <button type="submit" class="btn-modal-submit">KAYDET</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Settings & Age / Birthdate Modal -->
+  <div class="modal-backdrop" id="settingsModal" hidden>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-header">
+        <h2 class="modal-title" id="settingsTitle">ÖMÜR // AYARLAR</h2>
+        <button type="button" class="btn-modal-close" id="btnCloseSettings" aria-label="Kapat">&times;</button>
+      </div>
+      <form id="settingsForm">
+        
+        <div class="form-field">
+          <label for="birthDateInput">Doğum Tarihiniz</label>
+          <input type="date" id="birthDateInput" required>
+        </div>
+
+        <div class="form-field">
+          <label for="quickAgeInput">Veya Mevcut Yaşınızı Girin (Hızlı Ayar)</label>
+          <div class="quick-age-wrapper">
+            <input type="number" id="quickAgeInput" min="1" max="120" placeholder="Örn: 24">
+            <button type="button" class="btn-quick-calc" id="btnApplyQuickAge">Uygula</button>
+          </div>
+          <div class="quick-presets">
+            <span>Hızlı Seçim:</span>
+            <button type="button" class="btn-preset" data-age="20">20</button>
+            <button type="button" class="btn-preset" data-age="22">22</button>
+            <button type="button" class="btn-preset" data-age="25">25</button>
+            <button type="button" class="btn-preset" data-age="28">28</button>
+            <button type="button" class="btn-preset" data-age="30">30</button>
+            <button type="button" class="btn-preset" data-age="35">35</button>
+          </div>
+        </div>
+
+        <!-- Toggleable Estimated Life Expectancy (Tahmini Ömür Kapatılabilir) -->
+        <div class="form-field checkbox-field">
+          <label class="toggle-checkbox-label">
+            <input type="checkbox" id="enableLifeExpToggle">
+            <span class="toggle-text">Tahmini Ömür ve Geçen Ömür Yüzdesini Göster</span>
+          </label>
+          <span class="field-hint">İstemiyorsanız kapatabilirsiniz; üst bardaki ömür yüzdesi gizlenir.</span>
+        </div>
+
+        <div class="form-field" id="lifeExpSliderContainer">
+          <label for="lifeExpectancyInput">Tahmini Ömür (Yıl): <span id="lifeExpVal" class="bold-stat">80</span></label>
+          <input type="range" id="lifeExpectancyInput" min="50" max="115" value="80">
+        </div>
+
+        <!-- Categories Management Section -->
+        <div class="form-field">
+          <label>Kategoriler</label>
+          <div class="settings-cat-list" id="settingsCatList">
+            <!-- Populated dynamically by app.js -->
+          </div>
+          <span class="field-hint">Kategorilerin yanındaki [×] butonuna basarak silebilirsiniz.</span>
+        </div>
+
+        <div class="modal-action-row">
+          <div></div>
+          <div class="action-right">
+            <button type="button" class="btn-modal-cancel" id="btnCancelSettings">Kapat</button>
+            <button type="submit" class="btn-modal-submit">GÜNCELLE</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

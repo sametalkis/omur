@@ -1,0 +1,44 @@
+{
+  "title": "Kompozisyon seç",
+  "question": "Üç farklı orizuru kompozisyonu. Hangisiyle devam edelim?",
+  "options": [
+    {
+      "id": "comp-a",
+      "label": "Marj Sütunu",
+      "kicker": "A",
+      "thesis": "Yaş sayacı sol marjda origami adım numarası gibi duruyor, hedefler 2 sütunlu washi-krem panellerde.",
+      "palette": ["#D83A2E", "#F6F1E9", "#EDE3D1", "#D4AF37", "#1A1A1A"],
+      "materials": ["vermilion washi zemin", "kat çizgileri grid", "marj sayacı"],
+      "viewport": "Sol marjda büyük sayaç, sağda 2×4 kart ızgarası, altta HEDEF EKLE.",
+      "risk": "Marj sütunu küçük ekranlarda kaybolabilir.",
+      "comp": ".impeccable/mocks/comp-a-margin.jpg"
+    },
+    {
+      "id": "comp-b",
+      "label": "Katlama Dizisi",
+      "kicker": "B",
+      "thesis": "Yaş sayacı devasa ve merkezde, hedefler soldan sağa origami katlama aşamaları olarak diziliyor — düz kare'den turnaya.",
+      "palette": ["#D83A2E", "#F6F1E9", "#EDE3D1", "#D4AF37", "#1A1A1A"],
+      "materials": ["vermilion washi zemin", "anıtsal sayaç", "yatay katlama serisi"],
+      "viewport": "Üst üçte birde büyük sayaç, altında soldan sağa hedefler katlama dizisi olarak.",
+      "risk": "Yatay dizi çok hedefte sığmayabilir; kaydırma gerektirir.",
+      "comp": ".impeccable/mocks/comp-b-sequence.jpg"
+    },
+    {
+      "id": "comp-c",
+      "label": "Çapraz Kat",
+      "kicker": "C",
+      "thesis": "Cesur çapraz kat çizgisi viewport'u ikiye bölüyor — sol üstte yaş, sağ altta hedef kartları katlanmış kağıt katmanları gibi üst üste.",
+      "palette": ["#D83A2E", "#F6F1E9", "#EDE3D1", "#D4AF37", "#1A1A1A"],
+      "materials": ["vermilion washi zemin", "çapraz kat bölmesi", "kademeli kart katmanları"],
+      "viewport": "Çapraz çizgi ile asimetrik bölünmüş alan, sol üst üçgende sayaç, sağ altta kademeli kartlar.",
+      "risk": "Asimetri bazı kullanıcılara kaotik gelebilir; responsive dönüşüm zor.",
+      "comp": ".impeccable/mocks/comp-c-diagonal.jpg"
+    }
+  ],
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true
+}

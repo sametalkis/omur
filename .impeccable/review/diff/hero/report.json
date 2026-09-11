@@ -1,0 +1,772 @@
+{
+  "tool": "comp-diff",
+  "version": 1,
+  "createdAt": "2026-09-08T14:05:38.764Z",
+  "label": "hero",
+  "comp": ".impeccable/mocks/comp-b-sequence.jpg",
+  "build": ".impeccable/review/hero-repro.png",
+  "spec": ".impeccable/build/spec.json",
+  "compSize": "1376x768",
+  "buildSize": "1376x768",
+  "align": "top",
+  "overall": 0.7941,
+  "verdict": "drift",
+  "scores": {
+    "overall": 0.7941,
+    "structure": 0.7991,
+    "color": 0.7624,
+    "colorIntersection": 0.5653,
+    "paletteMatch": 0.8685,
+    "detail": 0.6953,
+    "detailRaw": 0.6953,
+    "detailAdded": 0,
+    "bands": 1
+  },
+  "palette": {
+    "comp": [
+      {
+        "hex": "#ce3827",
+        "coverage": 0.7785
+      },
+      {
+        "hex": "#eae4c9",
+        "coverage": 0.1539
+      },
+      {
+        "hex": "#191817",
+        "coverage": 0.0437
+      },
+      {
+        "hex": "#a33a2a",
+        "coverage": 0.0147
+      },
+      {
+        "hex": "#f8c4b4",
+        "coverage": 0.0046
+      },
+      {
+        "hex": "#2d0808",
+        "coverage": 0.0045
+      }
+    ],
+    "build": [
+      {
+        "hex": "#c83828",
+        "coverage": 0.8074
+      },
+      {
+        "hex": "#e8e8c8",
+        "coverage": 0.1224
+      },
+      {
+        "hex": "#181818",
+        "coverage": 0.0608
+      },
+      {
+        "hex": "#f3d6d1",
+        "coverage": 0.0059
+      },
+      {
+        "hex": "#d87767",
+        "coverage": 0.0019
+      },
+      {
+        "hex": "#d8a838",
+        "coverage": 0.0015
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": "washi-ground",
+      "x": 0,
+      "y": 0,
+      "w": 0.1,
+      "h": 0.2,
+      "kind": "texture",
+      "score": {
+        "overall": 0.4385,
+        "structure": 0.9763,
+        "color": 0.8127,
+        "colorIntersection": 0.6236,
+        "paletteMatch": 0.9146,
+        "detail": 0.0151,
+        "detailRaw": 0.0151,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": null,
+        "build": null
+      }
+    },
+    {
+      "id": "age-counter",
+      "x": 0.3699,
+      "y": 0.1654,
+      "w": 0.3692,
+      "h": 0.2135,
+      "kind": "text",
+      "score": {
+        "overall": 0.6594,
+        "structure": 0.5872,
+        "color": 0.8065,
+        "colorIntersection": 0.6693,
+        "paletteMatch": 0.8804,
+        "detail": 0.5078,
+        "detailRaw": 0.5078,
+        "detailAdded": 0,
+        "bands": 0.88
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 10,
+          "y": 9,
+          "w": 490,
+          "h": 143
+        },
+        "build": {
+          "x": 0,
+          "y": 9,
+          "w": 491,
+          "h": 141
+        }
+      }
+    },
+    {
+      "id": "gold-dot",
+      "x": 0.3001,
+      "y": 0.2995,
+      "w": 0.0523,
+      "h": 0.0781,
+      "kind": "control",
+      "score": {
+        "overall": 0.6978,
+        "structure": 0.8287,
+        "color": 0.8123,
+        "colorIntersection": 0.6565,
+        "paletteMatch": 0.8962,
+        "detail": 0.2029,
+        "detailRaw": 0.229,
+        "detailAdded": 0.0521,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 49
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 47
+        }
+      }
+    },
+    {
+      "id": "crease-line",
+      "x": 0,
+      "y": 0.5,
+      "w": 1,
+      "h": 0.1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.7923,
+        "structure": 0.9616,
+        "color": 0.733,
+        "colorIntersection": 0.5171,
+        "paletteMatch": 0.8492,
+        "detail": 0.4901,
+        "detailRaw": 0.5682,
+        "detailAdded": 0.1563,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 1376,
+          "h": 77
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 1376,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-1-plate",
+      "x": 0,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.3,
+      "kind": "plate",
+      "score": {
+        "overall": 0.6235,
+        "structure": 0.7956,
+        "color": 0.7803,
+        "colorIntersection": 0.6114,
+        "paletteMatch": 0.8713,
+        "detail": 0.5038,
+        "detailRaw": 0.5194,
+        "detailAdded": 0.0313,
+        "bands": 0.3333
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 59,
+          "y": 0,
+          "w": 216,
+          "h": 177
+        },
+        "build": {
+          "x": 60,
+          "y": 0,
+          "w": 215,
+          "h": 178
+        }
+      }
+    },
+    {
+      "id": "card-2-figure",
+      "x": 0.2,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5541,
+        "structure": 0.5833,
+        "color": 0.7191,
+        "colorIntersection": 0.5426,
+        "paletteMatch": 0.8142,
+        "detail": 0.4346,
+        "detailRaw": 0.5023,
+        "detailAdded": 0.1354,
+        "bands": 0.9429
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 16,
+          "y": 0,
+          "w": 259,
+          "h": 153
+        },
+        "build": {
+          "x": 13,
+          "y": 0,
+          "w": 262,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-2-text",
+      "x": 0.2,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.6702,
+        "structure": 0.6773,
+        "color": 0.7228,
+        "colorIntersection": 0.5494,
+        "paletteMatch": 0.8162,
+        "detail": 0.4439,
+        "detailRaw": 0.522,
+        "detailAdded": 0.1563,
+        "bands": 0.8429
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 17,
+          "y": 0,
+          "w": 258,
+          "h": 77
+        },
+        "build": {
+          "x": 13,
+          "y": 0,
+          "w": 262,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-3-figure",
+      "x": 0.4,
+      "y": 0.6,
+      "w": 0.1,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5474,
+        "structure": 0.6557,
+        "color": 0.7734,
+        "colorIntersection": 0.6717,
+        "paletteMatch": 0.8282,
+        "detail": 0.4009,
+        "detailRaw": 0.4842,
+        "detailAdded": 0.1667,
+        "bands": 0.5667
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 153
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-3-text",
+      "x": 0.4,
+      "y": 0.6,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.6379,
+        "structure": 0.7568,
+        "color": 0.7853,
+        "colorIntersection": 0.6704,
+        "paletteMatch": 0.8472,
+        "detail": 0.4211,
+        "detailRaw": 0.4575,
+        "detailAdded": 0.0729,
+        "bands": 0
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 77
+        },
+        "build": {
+          "x": 2,
+          "y": 0,
+          "w": 136,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-4-figure",
+      "x": 0.5,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.558,
+        "structure": 0.6189,
+        "color": 0.71,
+        "colorIntersection": 0.5166,
+        "paletteMatch": 0.8142,
+        "detail": 0.4575,
+        "detailRaw": 0.5252,
+        "detailAdded": 0.1354,
+        "bands": 0.65
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-4-text",
+      "x": 0.5,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.7047,
+        "structure": 0.676,
+        "color": 0.7369,
+        "colorIntersection": 0.5481,
+        "paletteMatch": 0.8386,
+        "detail": 0.5878,
+        "detailRaw": 0.6764,
+        "detailAdded": 0.1771,
+        "bands": 0.9429
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 77
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-5-figure",
+      "x": 0.7,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5,
+        "structure": 0.5642,
+        "color": 0.7667,
+        "colorIntersection": 0.5997,
+        "paletteMatch": 0.8566,
+        "detail": 0.3597,
+        "detailRaw": 0.4587,
+        "detailAdded": 0.1979,
+        "bands": 0.5143
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-5-text",
+      "x": 0.7,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.6306,
+        "structure": 0.7212,
+        "color": 0.7889,
+        "colorIntersection": 0.6355,
+        "paletteMatch": 0.8716,
+        "detail": 0.485,
+        "detailRaw": 0.5788,
+        "detailAdded": 0.1875,
+        "bands": 0
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 240,
+          "h": 77
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-6-figure",
+      "x": 0.8,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.3,
+      "kind": "plate",
+      "score": {
+        "overall": 0.4784,
+        "structure": 0.6842,
+        "color": 0.75,
+        "colorIntersection": 0.5487,
+        "paletteMatch": 0.8583,
+        "detail": 0.2746,
+        "detailRaw": 0.3319,
+        "detailAdded": 0.1146,
+        "bands": 0.4
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 216,
+          "h": 177
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 188,
+          "h": 177
+        }
+      }
+    },
+    {
+      "id": "dashed-crease",
+      "x": 0.2,
+      "y": 0.7,
+      "w": 0.7,
+      "h": 0.1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.6089,
+        "structure": 0.5702,
+        "color": 0.7299,
+        "colorIntersection": 0.5375,
+        "paletteMatch": 0.8335,
+        "detail": 0.5473,
+        "detailRaw": 0.589,
+        "detailAdded": 0.0833,
+        "bands": 0.6
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 16,
+          "y": 0,
+          "w": 947,
+          "h": 76
+        },
+        "build": {
+          "x": 13,
+          "y": 0,
+          "w": 950,
+          "h": 76
+        }
+      }
+    },
+    {
+      "id": "card-2-diagram",
+      "x": 0.2,
+      "y": 0.8,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5316,
+        "structure": 0.8375,
+        "color": 0.6872,
+        "colorIntersection": 0.4651,
+        "paletteMatch": 0.8068,
+        "detail": 0.3046,
+        "detailRaw": 0.3463,
+        "detailAdded": 0.0833,
+        "bands": 0.65
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 24
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 25
+        }
+      }
+    },
+    {
+      "id": "card-3-diagram",
+      "x": 0.4,
+      "y": 0.8,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5878,
+        "structure": 0.9097,
+        "color": 0.6893,
+        "colorIntersection": 0.4667,
+        "paletteMatch": 0.8092,
+        "detail": 0.365,
+        "detailRaw": 0.4014,
+        "detailAdded": 0.0729,
+        "bands": 0.8
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 123,
+          "h": 24
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 122,
+          "h": 25
+        }
+      }
+    },
+    {
+      "id": "card-4-diagram",
+      "x": 0.5,
+      "y": 0.8,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5337,
+        "structure": 0.7634,
+        "color": 0.671,
+        "colorIntersection": 0.4164,
+        "paletteMatch": 0.808,
+        "detail": 0.3424,
+        "detailRaw": 0.3632,
+        "detailAdded": 0.0417,
+        "bands": 0.75
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 15,
+          "y": 0,
+          "w": 260,
+          "h": 24
+        },
+        "build": {
+          "x": 14,
+          "y": 0,
+          "w": 261,
+          "h": 27
+        }
+      }
+    },
+    {
+      "id": "card-5-diagram",
+      "x": 0.7,
+      "y": 0.8,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5439,
+        "structure": 0.9032,
+        "color": 0.721,
+        "colorIntersection": 0.5281,
+        "paletteMatch": 0.8249,
+        "detail": 0.2978,
+        "detailRaw": 0.3238,
+        "detailAdded": 0.0521,
+        "bands": 0.5
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 24
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 25
+        }
+      }
+    },
+    {
+      "id": "hedef-ekle",
+      "x": 0.4172,
+      "y": 0.9154,
+      "w": 0.0872,
+      "h": 0.0469,
+      "kind": "text",
+      "score": {
+        "overall": 0.6264,
+        "structure": 0.7639,
+        "color": 0.639,
+        "colorIntersection": 0.3111,
+        "paletteMatch": 0.8156,
+        "detail": 0.198,
+        "detailRaw": 0.198,
+        "detailAdded": 0,
+        "bands": 0.55
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 10,
+          "y": 14,
+          "w": 104,
+          "h": 18
+        },
+        "build": null
+      }
+    }
+  ],
+  "files": {
+    "sideBySide": "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/side-by-side.png",
+    "heatmap": "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/heatmap.png",
+    "regionFiles": [
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/washi-ground.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/age-counter.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/gold-dot.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/crease-line.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-1-plate.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-2-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-2-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-3-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-3-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-4-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-4-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-5-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-5-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-6-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/dashed-crease.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-2-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-3-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-4-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/card-5-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/hero/regions/hedef-ekle.png"
+    ]
+  }
+}

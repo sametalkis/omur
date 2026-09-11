@@ -1,0 +1,763 @@
+{
+  "tool": "comp-diff",
+  "version": 1,
+  "createdAt": "2026-09-08T14:08:56.488Z",
+  "label": "desktop",
+  "comp": ".impeccable/mocks/comp-b-sequence.jpg",
+  "build": ".impeccable/review/desktop.png",
+  "spec": ".impeccable/build/spec.json",
+  "compSize": "1376x768",
+  "buildSize": "1440x900",
+  "align": "top",
+  "overall": 0.7331,
+  "verdict": "drift",
+  "scores": {
+    "overall": 0.7331,
+    "structure": 0.7806,
+    "color": 0.5662,
+    "colorIntersection": 0.1907,
+    "paletteMatch": 0.7685,
+    "detail": 0.6733,
+    "detailRaw": 0.6733,
+    "detailAdded": 0,
+    "bands": 1
+  },
+  "palette": {
+    "comp": [
+      {
+        "hex": "#ce3827",
+        "coverage": 0.7785
+      },
+      {
+        "hex": "#eae4c9",
+        "coverage": 0.1539
+      },
+      {
+        "hex": "#191817",
+        "coverage": 0.0437
+      },
+      {
+        "hex": "#a33a2a",
+        "coverage": 0.0147
+      },
+      {
+        "hex": "#f8c4b4",
+        "coverage": 0.0046
+      },
+      {
+        "hex": "#2d0808",
+        "coverage": 0.0045
+      }
+    ],
+    "build": [
+      {
+        "hex": "#b92919",
+        "coverage": 0.8112
+      },
+      {
+        "hex": "#e8e8c8",
+        "coverage": 0.1258
+      },
+      {
+        "hex": "#181818",
+        "coverage": 0.0614
+      },
+      {
+        "hex": "#681818",
+        "coverage": 0.0008
+      },
+      {
+        "hex": "#c89848",
+        "coverage": 0.0007
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": "washi-ground",
+      "x": 0,
+      "y": 0,
+      "w": 0.1,
+      "h": 0.2,
+      "kind": "texture",
+      "score": {
+        "overall": 0.3948,
+        "structure": 0.9529,
+        "color": 0.4967,
+        "colorIntersection": 0.0028,
+        "paletteMatch": 0.7627,
+        "detail": 0.1561,
+        "detailRaw": 0.1561,
+        "detailAdded": 0,
+        "bands": 1
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": null,
+        "build": null
+      }
+    },
+    {
+      "id": "age-counter",
+      "x": 0.3699,
+      "y": 0.1654,
+      "w": 0.3692,
+      "h": 0.2135,
+      "kind": "text",
+      "score": {
+        "overall": 0.6054,
+        "structure": 0.5901,
+        "color": 0.6323,
+        "colorIntersection": 0.3257,
+        "paletteMatch": 0.7974,
+        "detail": 0.4283,
+        "detailRaw": 0.4283,
+        "detailAdded": 0,
+        "bands": 0.88
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 10,
+          "y": 9,
+          "w": 490,
+          "h": 143
+        },
+        "build": null
+      }
+    },
+    {
+      "id": "gold-dot",
+      "x": 0.3001,
+      "y": 0.2995,
+      "w": 0.0523,
+      "h": 0.0781,
+      "kind": "control",
+      "score": {
+        "overall": 0.6413,
+        "structure": 0.8342,
+        "color": 0.6233,
+        "colorIntersection": 0.312,
+        "paletteMatch": 0.7909,
+        "detail": 0.2387,
+        "detailRaw": 0.2491,
+        "detailAdded": 0.0208,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 72,
+          "h": 49
+        },
+        "build": {
+          "x": 62,
+          "y": 20,
+          "w": 10,
+          "h": 28
+        }
+      }
+    },
+    {
+      "id": "crease-line",
+      "x": 0,
+      "y": 0.5,
+      "w": 1,
+      "h": 0.1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.7545,
+        "structure": 0.9678,
+        "color": 0.4832,
+        "colorIntersection": 0.0663,
+        "paletteMatch": 0.7076,
+        "detail": 0.5799,
+        "detailRaw": 0.6267,
+        "detailAdded": 0.0938,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 1376,
+          "h": 77
+        },
+        "build": {
+          "x": 0,
+          "y": 1,
+          "w": 1376,
+          "h": 76
+        }
+      }
+    },
+    {
+      "id": "card-1-plate",
+      "x": 0,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.3,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5814,
+        "structure": 0.7283,
+        "color": 0.714,
+        "colorIntersection": 0.5091,
+        "paletteMatch": 0.8243,
+        "detail": 0.4797,
+        "detailRaw": 0.4953,
+        "detailAdded": 0.0313,
+        "bands": 0.3333
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 59,
+          "y": 0,
+          "w": 216,
+          "h": 177
+        },
+        "build": {
+          "x": 61,
+          "y": 0,
+          "w": 213,
+          "h": 179
+        }
+      }
+    },
+    {
+      "id": "card-2-figure",
+      "x": 0.2,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5418,
+        "structure": 0.5596,
+        "color": 0.7121,
+        "colorIntersection": 0.5165,
+        "paletteMatch": 0.8175,
+        "detail": 0.4339,
+        "detailRaw": 0.4964,
+        "detailAdded": 0.125,
+        "bands": 0.85
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 16,
+          "y": 0,
+          "w": 259,
+          "h": 153
+        },
+        "build": {
+          "x": 13,
+          "y": 0,
+          "w": 262,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-2-text",
+      "x": 0.2,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.645,
+        "structure": 0.6521,
+        "color": 0.7147,
+        "colorIntersection": 0.5318,
+        "paletteMatch": 0.8132,
+        "detail": 0.4116,
+        "detailRaw": 0.4949,
+        "detailAdded": 0.1667,
+        "bands": 0.7857
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 17,
+          "y": 0,
+          "w": 258,
+          "h": 77
+        },
+        "build": {
+          "x": 14,
+          "y": 0,
+          "w": 260,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-3-figure",
+      "x": 0.4,
+      "y": 0.6,
+      "w": 0.1,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5401,
+        "structure": 0.6533,
+        "color": 0.7444,
+        "colorIntersection": 0.6002,
+        "paletteMatch": 0.822,
+        "detail": 0.4058,
+        "detailRaw": 0.4892,
+        "detailAdded": 0.1667,
+        "bands": 0.5
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 153
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-3-text",
+      "x": 0.4,
+      "y": 0.6,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.6293,
+        "structure": 0.7655,
+        "color": 0.747,
+        "colorIntersection": 0.5853,
+        "paletteMatch": 0.8341,
+        "detail": 0.399,
+        "detailRaw": 0.4407,
+        "detailAdded": 0.0833,
+        "bands": 0
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 77
+        },
+        "build": {
+          "x": 1,
+          "y": 0,
+          "w": 137,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-4-figure",
+      "x": 0.5,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5529,
+        "structure": 0.5811,
+        "color": 0.6972,
+        "colorIntersection": 0.4841,
+        "paletteMatch": 0.812,
+        "detail": 0.4741,
+        "detailRaw": 0.5418,
+        "detailAdded": 0.1354,
+        "bands": 0.6222
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-4-text",
+      "x": 0.5,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.6569,
+        "structure": 0.6342,
+        "color": 0.7059,
+        "colorIntersection": 0.4959,
+        "paletteMatch": 0.819,
+        "detail": 0.591,
+        "detailRaw": 0.6743,
+        "detailAdded": 0.1667,
+        "bands": 0.7467
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 77
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-5-figure",
+      "x": 0.7,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.2,
+      "kind": "plate",
+      "score": {
+        "overall": 0.4923,
+        "structure": 0.5382,
+        "color": 0.7577,
+        "colorIntersection": 0.5866,
+        "paletteMatch": 0.8498,
+        "detail": 0.3591,
+        "detailRaw": 0.458,
+        "detailAdded": 0.1979,
+        "bands": 0.5333
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 153
+        }
+      }
+    },
+    {
+      "id": "card-5-text",
+      "x": 0.7,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "text",
+      "score": {
+        "overall": 0.6126,
+        "structure": 0.6947,
+        "color": 0.7785,
+        "colorIntersection": 0.6327,
+        "paletteMatch": 0.857,
+        "detail": 0.4707,
+        "detailRaw": 0.5697,
+        "detailAdded": 0.1979,
+        "bands": 0
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 240,
+          "h": 77
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 77
+        }
+      }
+    },
+    {
+      "id": "card-6-figure",
+      "x": 0.8,
+      "y": 0.6,
+      "w": 0.2,
+      "h": 0.3,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5057,
+        "structure": 0.6585,
+        "color": 0.7054,
+        "colorIntersection": 0.503,
+        "paletteMatch": 0.8144,
+        "detail": 0.3601,
+        "detailRaw": 0.4174,
+        "detailAdded": 0.1146,
+        "bands": 0.4
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 216,
+          "h": 177
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 189,
+          "h": 179
+        }
+      }
+    },
+    {
+      "id": "dashed-crease",
+      "x": 0.2,
+      "y": 0.7,
+      "w": 0.7,
+      "h": 0.1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.608,
+        "structure": 0.5613,
+        "color": 0.7267,
+        "colorIntersection": 0.5258,
+        "paletteMatch": 0.8348,
+        "detail": 0.5594,
+        "detailRaw": 0.6011,
+        "detailAdded": 0.0833,
+        "bands": 0.6
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 16,
+          "y": 0,
+          "w": 947,
+          "h": 76
+        },
+        "build": {
+          "x": 13,
+          "y": 0,
+          "w": 950,
+          "h": 76
+        }
+      }
+    },
+    {
+      "id": "card-2-diagram",
+      "x": 0.2,
+      "y": 0.8,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5081,
+        "structure": 0.7239,
+        "color": 0.5305,
+        "colorIntersection": 0.1462,
+        "paletteMatch": 0.7374,
+        "detail": 0.3771,
+        "detailRaw": 0.4188,
+        "detailAdded": 0.0833,
+        "bands": 0.65
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 24
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 275,
+          "h": 26
+        }
+      }
+    },
+    {
+      "id": "card-3-diagram",
+      "x": 0.4,
+      "y": 0.8,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.6133,
+        "structure": 0.9032,
+        "color": 0.5538,
+        "colorIntersection": 0.2174,
+        "paletteMatch": 0.7349,
+        "detail": 0.4734,
+        "detailRaw": 0.5047,
+        "detailAdded": 0.0625,
+        "bands": 0.8
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 123,
+          "h": 24
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 123,
+          "h": 26
+        }
+      }
+    },
+    {
+      "id": "card-4-diagram",
+      "x": 0.5,
+      "y": 0.8,
+      "w": 0.2,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5272,
+        "structure": 0.7584,
+        "color": 0.5327,
+        "colorIntersection": 0.0903,
+        "paletteMatch": 0.771,
+        "detail": 0.3771,
+        "detailRaw": 0.398,
+        "detailAdded": 0.0417,
+        "bands": 0.85
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 15,
+          "y": 0,
+          "w": 260,
+          "h": 24
+        },
+        "build": {
+          "x": 16,
+          "y": 0,
+          "w": 259,
+          "h": 26
+        }
+      }
+    },
+    {
+      "id": "card-5-diagram",
+      "x": 0.7,
+      "y": 0.8,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "plate",
+      "score": {
+        "overall": 0.5407,
+        "structure": 0.884,
+        "color": 0.5643,
+        "colorIntersection": 0.2166,
+        "paletteMatch": 0.7515,
+        "detail": 0.3637,
+        "detailRaw": 0.3897,
+        "detailAdded": 0.0521,
+        "bands": 0.5
+      },
+      "verdict": "missing",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 24
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 138,
+          "h": 26
+        }
+      }
+    },
+    {
+      "id": "hedef-ekle",
+      "x": 0.4172,
+      "y": 0.9154,
+      "w": 0.0872,
+      "h": 0.0469,
+      "kind": "text",
+      "score": {
+        "overall": 0.5509,
+        "structure": 0.7413,
+        "color": 0.4417,
+        "colorIntersection": 0.0021,
+        "paletteMatch": 0.6784,
+        "detail": 0.1986,
+        "detailRaw": 0.1986,
+        "detailAdded": 0,
+        "bands": 0.4
+      },
+      "verdict": "contradicted",
+      "inkBox": {
+        "comp": {
+          "x": 10,
+          "y": 14,
+          "w": 104,
+          "h": 18
+        },
+        "build": null
+      }
+    }
+  ],
+  "files": {
+    "sideBySide": "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/side-by-side.png",
+    "heatmap": "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/heatmap.png",
+    "regionFiles": [
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/washi-ground.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/age-counter.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/gold-dot.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/crease-line.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-1-plate.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-2-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-2-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-3-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-3-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-4-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-4-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-5-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-5-text.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-6-figure.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/dashed-crease.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-2-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-3-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-4-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/card-5-diagram.png",
+      "/home/samuelvanunu/Downloads/Projeler/Vision Board/.impeccable/review/diff/final/regions/hedef-ekle.png"
+    ]
+  }
+}

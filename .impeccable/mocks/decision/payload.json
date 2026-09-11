@@ -1,0 +1,96 @@
+{
+  "title": "Vision Board — görsel dünyayı seç",
+  "question": "Zar \"Kalkış Tahtası\" yönünü atadı. Bu yönle devam et, bir alternatif seç, ya da yeniden at.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Kalkış Tahtası",
+      "kicker": "THE ROLL",
+      "lineage": "Mekanik split-flap kalkış/varış tabelaları (Solari di Udine)",
+      "thesis": "Yaşın her saniyede bir yaprak gibi döndüğü, hedeflerin varılacak istasyonlar olduğu bir kalkış tahtası.",
+      "palette": ["#0a0a0a", "#f5c518", "#e8e8e8", "#c0392b"],
+      "materials": ["split-flap karakter mekanizması", "havalimanı tabelası siyah zemin", "sarı vurgu bandı"],
+      "viewport": "Tam ekran mat siyah zemin üzerinde büyük split-flap yaş sayacı (virgülden sonraki haneler sürekli dönüyor), altında sarı başlık bandıyla hedef istasyonları — her hedef bir kalkış satırı: isim, ilerleme barı, durum göstergesi.",
+      "risk": "Retro-havacılık nostalji olarak okunabilir; mekanik hissi taklit düzeyinde kalırsa plastik görünür.",
+      "raised": [
+        {
+          "from": "challenger-orizuru",
+          "raise": "Her hedef kartı kendi içinde katlanır/açılır — detaylar origami gibi açılarak görünür, split-flap ritmiyle senkronize."
+        },
+        {
+          "from": "challenger-timetable",
+          "raise": "Tek tip boyut disiplini: tüm metin tek punto büyüklüğünde, hiyerarşi ağırlık, kutu ve renk terslemesiyle taşınır."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Gözlemevi Kütüğü",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "Astronomik gözlem defterleri ve yıldız haritaları",
+      "thesis": "Yaşın bir gök saati gibi aktığı, hedeflerin ulaşılacak göksel cisimler olduğu bir gözlemci kütüğü.",
+      "palette": ["#0b1120", "#d4af37", "#f0e6d2", "#4a6fa5"],
+      "materials": ["lacivert gece gökyüzü", "altın mürekkep çizgiler", "el yazısı astronomik notlar"],
+      "viewport": "Koyu lacivert alan üzerinde altın mürekkeple çizilmiş dairesel yaş sayacı (gök saati), etrafında hedefler yıldız haritası gibi konumlandırılmış — her biri bir yıldız kümesi, ilerleme yörünge çizgisiyle gösterilir.",
+      "risk": "Bu kategorideki çoğu yapay zekâ çıktısının varacağı koyu+altın yönüdür — tanıdık arazide olduğunu bilmek gerekir.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-orizuru",
+      "label": "Origami Turna Dizisi",
+      "verdict": "declined",
+      "lineage": "Kağıt katlama — orizuru turna dizisi",
+      "palette": ["#c0392b", "#f5f0e8", "#2c2c2c", "#d4af37"],
+      "materials": ["washi kağıdı dokusu", "kat çizgileri", "sumi mürekkebi"],
+      "case": "Ürüne füzyonlandığında güzel ama hedefe yönelik ilerleme barları katlama adımlarına doğal olarak oturmuyor; izleyici kendini kağıt katlayan biri olarak tanımlamıyor.",
+      "kept": "Açılma/katlanma animasyonu — detayların ritüelistik bir hareketle açılma disiplini.",
+      "hero": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-orizuru-crane-sequence-hero.webp"
+    },
+    {
+      "id": "challenger-dumbar",
+      "label": "Stüdyo Dumbar Kimlik Sistemi",
+      "verdict": "declined",
+      "lineage": "Modüler kimlik sistemi — fotoğraf + renkli bloklar",
+      "palette": ["#00a8e8", "#e8175d", "#f5c518", "#4caf50"],
+      "materials": ["doygun renk blokları", "fotoğrafik katmanlar", "vektör parçaları"],
+      "case": "Görsel olarak cesur ama Memento Mori'nin varoluşsal ağırlığıyla çelişiyor — renkli konfeti atmosferi ölümlülük sayacının yanında parodi gibi okunur.",
+      "kept": "Renkli blok bariyerlerinin keskin kompozisyon cesareti — korkusuz alan bölme.",
+      "hero": "https://impeccable.style/worlds/cards/studio-dumbar-identity-hero.webp"
+    },
+    {
+      "id": "challenger-timetable",
+      "label": "Cep Tarife Tablosu",
+      "verdict": "competitive",
+      "lineage": "1971 cep havayolu tarifesi — eğik cam slayt rafı",
+      "palette": ["#c8a84e", "#3a3a3a", "#fffff0", "#c0392b", "#2d5a27"],
+      "materials": ["altın sarısı zemin", "renkli cam slaytlar", "tek punto tipografi"],
+      "thesis": "Yaşın bir tarife satırı gibi okunduğu, hedeflerin eğik cam slaytlar üzerinde sıralandığı bir tarife tablosu.",
+      "viewport": "Altın sarısı ışıklı zemin üzerinde 11 derece eğik ardıvari cam slaytlar — her slayt bir hedef, içinde işaret hücreleri (dolu=tamamlandı, boş=devam, kırmızı çizgi=ertelendi), yaş sayacı bir süre sütununda.",
+      "case": "Tek eksen güçlü: tek punto disiplini ve cam slayt estetiği cesur, ama eğik slayt geometrisi hedef düzenlemeyi karmaşıklaştırıyor ve izleyici tarife okuyan biri olarak kendini tanımlamıyor.",
+      "risk": "Eğik geometri küçük ekranlarda çözülür; hece düzeyinde keskin kalması zor.",
+      "comp": ".impeccable/mocks/decision/challenger-timetable.webp",
+      "hero": "https://impeccable.style/worlds/cards/rw-timetable-slide-rack-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Kategori standardı",
+    "thesis": "Her yeni sekme eklentisinin gönderdiği şey: koyu arka plan, ortada saat/tarih, altında kart ızgarası.",
+    "palette": ["#121212", "#ffffff", "#6366f1"],
+    "materials": ["koyu tema", "yuvarlak köşeli kartlar", "gradient vurgu"],
+    "viewport": "Ortada büyük dijital saat, altında 2×3 kart ızgarası, her kartta ikon + metin.",
+    "risk": "Rakiplerden ayrışamaz — tasarım gereği.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

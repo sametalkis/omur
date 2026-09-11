@@ -1,0 +1,1141 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-09-08T13:20:14.380Z",
+  "comp": ".impeccable/mocks/comp-b-sequence.jpg",
+  "warnings": [
+    "region card-1-plate: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-2-figure: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-3-figure: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-4-figure: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-5-figure: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-6-figure: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-3-diagram: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region card-5-diagram: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+  ],
+  "uncoveredInkCells": [],
+  "compSize": {
+    "width": 1376,
+    "height": 768
+  },
+  "aspect": 1.7917,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#ce3827",
+      "coverage": 0.7821
+    },
+    {
+      "hex": "#eae4c9",
+      "coverage": 0.1546
+    },
+    {
+      "hex": "#191817",
+      "coverage": 0.0439
+    },
+    {
+      "hex": "#a33a2a",
+      "coverage": 0.0148
+    },
+    {
+      "hex": "#f8c4b4",
+      "coverage": 0.0046
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.1831,
+      "strength": 0.3207
+    },
+    {
+      "y": 0.3662,
+      "strength": 0.3264
+    },
+    {
+      "y": 0.493,
+      "strength": 0.3792
+    },
+    {
+      "y": 0.5915,
+      "strength": 1
+    },
+    {
+      "y": 0.6197,
+      "strength": 0.2111
+    },
+    {
+      "y": 0.831,
+      "strength": 1
+    }
+  ],
+  "regions": [
+    {
+      "id": "washi-ground",
+      "kind": "texture",
+      "note": "Vermilion washi paper texture with visible kozo fiber — the page ground material",
+      "grid": "A0:A1",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 0.1,
+        "h": 0.2
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 138,
+        "h": 154
+      },
+      "aspect": 0.8961,
+      "palette": [
+        {
+          "hex": "#cc3827",
+          "coverage": 1
+        }
+      ],
+      "detail": {
+        "energy": 3.4542
+      },
+      "medium": "raster",
+      "plate": "assets/plates/washi-ground.png",
+      "text": null
+    },
+    {
+      "id": "age-counter",
+      "kind": "text",
+      "note": "Monumental age counter '23.604812' in heavy sumi-black numerals",
+      "grid": "C1:I4",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.1,
+        "w": 0.7,
+        "h": 0.4
+      },
+      "box": {
+        "x": 0.3699,
+        "y": 0.1654,
+        "w": 0.3692,
+        "h": 0.2135
+      },
+      "px": {
+        "x": 509,
+        "y": 127,
+        "w": 508,
+        "h": 164
+      },
+      "aspect": 3.0976,
+      "palette": [
+        {
+          "hex": "#ce3828",
+          "coverage": 0.5626
+        },
+        {
+          "hex": "#191817",
+          "coverage": 0.3389
+        },
+        {
+          "hex": "#b84636",
+          "coverage": 0.0443
+        },
+        {
+          "hex": "#2e0808",
+          "coverage": 0.0377
+        },
+        {
+          "hex": "#8a362d",
+          "coverage": 0.0164
+        }
+      ],
+      "detail": {
+        "energy": 14.3747
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "gold-dot",
+      "kind": "control",
+      "note": "Small gold dot at the decimal point of the age counter",
+      "grid": "D3:D3",
+      "coverBox": {
+        "x": 0.3,
+        "y": 0.3,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.3001,
+        "y": 0.2995,
+        "w": 0.0523,
+        "h": 0.0781
+      },
+      "px": {
+        "x": 413,
+        "y": 230,
+        "w": 72,
+        "h": 60
+      },
+      "aspect": 1.2,
+      "palette": [
+        {
+          "hex": "#cd3828",
+          "coverage": 0.563
+        },
+        {
+          "hex": "#191818",
+          "coverage": 0.3326
+        },
+        {
+          "hex": "#b84636",
+          "coverage": 0.0391
+        },
+        {
+          "hex": "#2e0808",
+          "coverage": 0.0391
+        },
+        {
+          "hex": "#b99849",
+          "coverage": 0.0261
+        }
+      ],
+      "detail": {
+        "energy": 3.226
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "crease-line",
+      "kind": "chrome",
+      "note": "Horizontal fold-white crease line spanning full width, separating counter from goals",
+      "grid": "A5:J5",
+      "box": {
+        "x": 0,
+        "y": 0.5,
+        "w": 1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 0,
+        "y": 384,
+        "w": 1376,
+        "h": 77
+      },
+      "aspect": 17.8701,
+      "palette": [
+        {
+          "hex": "#ce3828",
+          "coverage": 0.8382
+        },
+        {
+          "hex": "#e9e2c8",
+          "coverage": 0.085
+        },
+        {
+          "hex": "#f8c8b8",
+          "coverage": 0.0454
+        },
+        {
+          "hex": "#a93828",
+          "coverage": 0.0314
+        }
+      ],
+      "detail": {
+        "energy": 29.2488
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "card-1-plate",
+      "kind": "plate",
+      "note": "First origami stage: flat red square on washi-cream card — a vermilion square with thin frame lines, contained by the card boundary",
+      "grid": "A6:B8",
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "px": {
+        "x": 0,
+        "y": 461,
+        "w": 275,
+        "h": 230
+      },
+      "aspect": 1.1957,
+      "palette": [
+        {
+          "hex": "#cc3827",
+          "coverage": 0.6714
+        },
+        {
+          "hex": "#ebe4c9",
+          "coverage": 0.2715
+        },
+        {
+          "hex": "#ab3828",
+          "coverage": 0.0409
+        },
+        {
+          "hex": "#b87661",
+          "coverage": 0.0081
+        },
+        {
+          "hex": "#b65848",
+          "coverage": 0.0081
+        }
+      ],
+      "detail": {
+        "energy": 9.3458
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-1-plate.png",
+      "text": null
+    },
+    {
+      "id": "card-2-figure",
+      "kind": "plate",
+      "note": "Second origami stage: red diamond shape (first fold), contained within its card panel",
+      "grid": "C6:D7",
+      "bleed": true,
+      "box": {
+        "x": 0.2,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.2
+      },
+      "px": {
+        "x": 275,
+        "y": 461,
+        "w": 275,
+        "h": 154
+      },
+      "aspect": 1.7857,
+      "palette": [
+        {
+          "hex": "#eae3ca",
+          "coverage": 0.7418
+        },
+        {
+          "hex": "#cd3828",
+          "coverage": 0.2098
+        },
+        {
+          "hex": "#a23a26",
+          "coverage": 0.0226
+        },
+        {
+          "hex": "#3e3728",
+          "coverage": 0.015
+        },
+        {
+          "hex": "#b87868",
+          "coverage": 0.0109
+        }
+      ],
+      "detail": {
+        "energy": 24.3644
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-2-figure.png",
+      "text": null
+    },
+    {
+      "id": "card-2-text",
+      "kind": "text",
+      "note": "Goal title 'Flat the goal' on card 2 in humanist sans",
+      "grid": "C6:D6",
+      "snap": false,
+      "box": {
+        "x": 0.2,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 275,
+        "y": 461,
+        "w": 275,
+        "h": 77
+      },
+      "aspect": 3.5714,
+      "palette": [
+        {
+          "hex": "#e9e3ca",
+          "coverage": 0.8057
+        },
+        {
+          "hex": "#ce3828",
+          "coverage": 0.1437
+        },
+        {
+          "hex": "#a03825",
+          "coverage": 0.0183
+        },
+        {
+          "hex": "#0f0a08",
+          "coverage": 0.0183
+        },
+        {
+          "hex": "#342a1e",
+          "coverage": 0.0139
+        }
+      ],
+      "detail": {
+        "energy": 30.1086
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": null,
+        "measuredAt": "2026-09-08T13:22:04.414Z",
+        "note": "no separable lettering in the crop; size by the region box"
+      }
+    },
+    {
+      "id": "card-3-figure",
+      "kind": "plate",
+      "note": "Third origami stage: diamond with visible fold creases, contained within its card panel",
+      "grid": "E6:E7",
+      "bleed": true,
+      "box": {
+        "x": 0.4,
+        "y": 0.6,
+        "w": 0.1,
+        "h": 0.2
+      },
+      "px": {
+        "x": 550,
+        "y": 461,
+        "w": 138,
+        "h": 154
+      },
+      "aspect": 0.8961,
+      "palette": [
+        {
+          "hex": "#e9e4c9",
+          "coverage": 0.6897
+        },
+        {
+          "hex": "#cc3928",
+          "coverage": 0.2547
+        },
+        {
+          "hex": "#a03928",
+          "coverage": 0.0375
+        },
+        {
+          "hex": "#f8baa9",
+          "coverage": 0.0125
+        },
+        {
+          "hex": "#f8927e",
+          "coverage": 0.0056
+        }
+      ],
+      "detail": {
+        "energy": 10.4081
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-3-figure.png",
+      "text": null
+    },
+    {
+      "id": "card-3-text",
+      "kind": "text",
+      "note": "Goal title 'Seeing the goal' on card 3",
+      "grid": "E6:E6",
+      "snap": false,
+      "box": {
+        "x": 0.4,
+        "y": 0.6,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 550,
+        "y": 461,
+        "w": 138,
+        "h": 77
+      },
+      "aspect": 1.7922,
+      "palette": [
+        {
+          "hex": "#e9e5c9",
+          "coverage": 0.7807
+        },
+        {
+          "hex": "#ce3928",
+          "coverage": 0.1675
+        },
+        {
+          "hex": "#9d3928",
+          "coverage": 0.0311
+        },
+        {
+          "hex": "#bcb3a8",
+          "coverage": 0.0104
+        },
+        {
+          "hex": "#272111",
+          "coverage": 0.0104
+        }
+      ],
+      "detail": {
+        "energy": 11.0818
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 3,
+          "capHeightPx": 30.9,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9693,
+          "advTall": 0.9693,
+          "advX": null,
+          "gap": 0.0646,
+          "xRatio": null,
+          "stemW": 0.4855,
+          "contrast": 2.6819,
+          "serif": null,
+          "densTall": 0.5352,
+          "densX": null,
+          "weight": 0.5352
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "card-4-figure",
+      "kind": "plate",
+      "note": "Fourth origami stage: preliminary base shape with raised points, contained within its card panel",
+      "grid": "F6:G7",
+      "bleed": true,
+      "box": {
+        "x": 0.5,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.2
+      },
+      "px": {
+        "x": 688,
+        "y": 461,
+        "w": 275,
+        "h": 154
+      },
+      "aspect": 1.7857,
+      "palette": [
+        {
+          "hex": "#eae4ca",
+          "coverage": 0.7188
+        },
+        {
+          "hex": "#cc3928",
+          "coverage": 0.2277
+        },
+        {
+          "hex": "#43392b",
+          "coverage": 0.0193
+        },
+        {
+          "hex": "#b5ac9e",
+          "coverage": 0.0184
+        },
+        {
+          "hex": "#eeb19e",
+          "coverage": 0.0158
+        }
+      ],
+      "detail": {
+        "energy": 28.5311
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-4-figure.png",
+      "text": null
+    },
+    {
+      "id": "card-4-text",
+      "kind": "text",
+      "note": "Goal title 'Folding goal' on card 4",
+      "grid": "F6:G6",
+      "snap": false,
+      "box": {
+        "x": 0.5,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 688,
+        "y": 461,
+        "w": 275,
+        "h": 77
+      },
+      "aspect": 3.5714,
+      "palette": [
+        {
+          "hex": "#eae4ca",
+          "coverage": 0.7614
+        },
+        {
+          "hex": "#cd3828",
+          "coverage": 0.1882
+        },
+        {
+          "hex": "#c0b8a9",
+          "coverage": 0.0194
+        },
+        {
+          "hex": "#eaa794",
+          "coverage": 0.0155
+        },
+        {
+          "hex": "#8d8579",
+          "coverage": 0.0155
+        }
+      ],
+      "detail": {
+        "energy": 28.4242
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 42,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5595,
+          "advTall": 0.5476,
+          "advX": null,
+          "gap": 0.0476,
+          "xRatio": 0.8352,
+          "stemW": 0.1297,
+          "contrast": 1.9852,
+          "serif": null,
+          "densTall": 0.9623,
+          "densX": null,
+          "weight": 0.9623
+        },
+        "widthClass": "condensed",
+        "weightClass": "black",
+        "chosen": {
+          "family": "Barrio",
+          "weight": 400,
+          "fontSizePx": 59,
+          "source": "index",
+          "fp": {
+            "lines": 1,
+            "glyphs": 10,
+            "capHeightPx": 42,
+            "inkIsDark": true,
+            "allCaps": false,
+            "advance": 0.6662,
+            "advTall": 0.6662,
+            "advX": null,
+            "gap": 0.119,
+            "xRatio": 0.8343,
+            "stemW": 0.1194,
+            "contrast": 0.9048,
+            "serif": 1.0118,
+            "densTall": 0.4244,
+            "densX": null,
+            "weight": 0.4244
+          },
+          "stamp": "3c11572ca0da"
+        }
+      }
+    },
+    {
+      "id": "card-5-figure",
+      "kind": "plate",
+      "note": "Fifth origami stage: two cranes emerging from bird base, contained within its card panel",
+      "grid": "H6:I7",
+      "bleed": true,
+      "box": {
+        "x": 0.7,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.2
+      },
+      "px": {
+        "x": 963,
+        "y": 461,
+        "w": 275,
+        "h": 154
+      },
+      "aspect": 1.7857,
+      "palette": [
+        {
+          "hex": "#eae4c9",
+          "coverage": 0.7509
+        },
+        {
+          "hex": "#cb3928",
+          "coverage": 0.1915
+        },
+        {
+          "hex": "#b14734",
+          "coverage": 0.0236
+        },
+        {
+          "hex": "#f7bba9",
+          "coverage": 0.0199
+        },
+        {
+          "hex": "#d07766",
+          "coverage": 0.0141
+        }
+      ],
+      "detail": {
+        "energy": 22.0574
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-5-figure.png",
+      "text": null
+    },
+    {
+      "id": "card-5-text",
+      "kind": "text",
+      "note": "Goal title 'Origami crane' on card 5",
+      "grid": "H6:I6",
+      "snap": false,
+      "box": {
+        "x": 0.7,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 963,
+        "y": 461,
+        "w": 275,
+        "h": 77
+      },
+      "aspect": 3.5714,
+      "palette": [
+        {
+          "hex": "#e9e4c9",
+          "coverage": 0.8495
+        },
+        {
+          "hex": "#cd3928",
+          "coverage": 0.1256
+        },
+        {
+          "hex": "#a9402d",
+          "coverage": 0.0099
+        },
+        {
+          "hex": "#f8beaa",
+          "coverage": 0.0086
+        },
+        {
+          "hex": "#180c08",
+          "coverage": 0.0065
+        }
+      ],
+      "detail": {
+        "energy": 17.51
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 5,
+          "capHeightPx": 28.6,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.3853,
+          "advTall": 0.3853,
+          "advX": null,
+          "gap": 0.2714,
+          "xRatio": null,
+          "stemW": 0.1748,
+          "contrast": 1.5773,
+          "serif": null,
+          "densTall": 0.5646,
+          "densX": null,
+          "weight": 0.5646
+        },
+        "widthClass": "compressed",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "card-6-figure",
+      "kind": "plate",
+      "note": "Final origami stage: completed crane with spread wings, smaller crane beside it",
+      "grid": "I6:J8",
+      "bleed": true,
+      "box": {
+        "x": 0.8,
+        "y": 0.6,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "px": {
+        "x": 1101,
+        "y": 461,
+        "w": 275,
+        "h": 230
+      },
+      "aspect": 1.1957,
+      "palette": [
+        {
+          "hex": "#ce3827",
+          "coverage": 0.5093
+        },
+        {
+          "hex": "#eae4c9",
+          "coverage": 0.4506
+        },
+        {
+          "hex": "#a53c28",
+          "coverage": 0.0222
+        },
+        {
+          "hex": "#b8745f",
+          "coverage": 0.0104
+        },
+        {
+          "hex": "#f8bcaa",
+          "coverage": 0.0074
+        }
+      ],
+      "detail": {
+        "energy": 12.3411
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-6-figure.png",
+      "text": null
+    },
+    {
+      "id": "dashed-crease",
+      "kind": "chrome",
+      "note": "Horizontal dashed fold-white crease line connecting all goal cards in sequence",
+      "grid": "C7:I7",
+      "box": {
+        "x": 0.2,
+        "y": 0.7,
+        "w": 0.7,
+        "h": 0.1
+      },
+      "px": {
+        "x": 275,
+        "y": 538,
+        "w": 963,
+        "h": 77
+      },
+      "aspect": 12.5065,
+      "palette": [
+        {
+          "hex": "#ebe3ca",
+          "coverage": 0.6528
+        },
+        {
+          "hex": "#cb3928",
+          "coverage": 0.2828
+        },
+        {
+          "hex": "#a83a27",
+          "coverage": 0.0272
+        },
+        {
+          "hex": "#cc7d6c",
+          "coverage": 0.0221
+        },
+        {
+          "hex": "#f5b7a4",
+          "coverage": 0.015
+        }
+      ],
+      "detail": {
+        "energy": 39.2773
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "card-2-diagram",
+      "kind": "plate",
+      "note": "Small crease-pattern line diagram showing fold pattern for card 2",
+      "grid": "C8:D8",
+      "box": {
+        "x": 0.2,
+        "y": 0.8,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 275,
+        "y": 614,
+        "w": 275,
+        "h": 77
+      },
+      "aspect": 3.5714,
+      "palette": [
+        {
+          "hex": "#cf3828",
+          "coverage": 0.6835
+        },
+        {
+          "hex": "#e9e3c9",
+          "coverage": 0.2406
+        },
+        {
+          "hex": "#ba7662",
+          "coverage": 0.0416
+        },
+        {
+          "hex": "#a63626",
+          "coverage": 0.0223
+        },
+        {
+          "hex": "#403725",
+          "coverage": 0.0122
+        }
+      ],
+      "detail": {
+        "energy": 13.2428
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-2-diagram.png",
+      "text": null
+    },
+    {
+      "id": "card-3-diagram",
+      "kind": "plate",
+      "note": "Small crease-pattern line diagram for card 3",
+      "grid": "E8:E8",
+      "bleed": true,
+      "box": {
+        "x": 0.4,
+        "y": 0.8,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 550,
+        "y": 614,
+        "w": 138,
+        "h": 77
+      },
+      "aspect": 1.7922,
+      "palette": [
+        {
+          "hex": "#d13828",
+          "coverage": 0.6516
+        },
+        {
+          "hex": "#e9e5c8",
+          "coverage": 0.2672
+        },
+        {
+          "hex": "#ab3828",
+          "coverage": 0.0461
+        },
+        {
+          "hex": "#b87865",
+          "coverage": 0.0335
+        },
+        {
+          "hex": "#f8d0b8",
+          "coverage": 0.0017
+        }
+      ],
+      "detail": {
+        "energy": 5.797
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-3-diagram.png",
+      "text": null
+    },
+    {
+      "id": "card-4-diagram",
+      "kind": "plate",
+      "note": "Small crease-pattern line diagram for card 4",
+      "grid": "F8:G8",
+      "box": {
+        "x": 0.5,
+        "y": 0.8,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 688,
+        "y": 614,
+        "w": 275,
+        "h": 77
+      },
+      "aspect": 3.5714,
+      "palette": [
+        {
+          "hex": "#cf3828",
+          "coverage": 0.6998
+        },
+        {
+          "hex": "#e9e4c9",
+          "coverage": 0.2338
+        },
+        {
+          "hex": "#b97561",
+          "coverage": 0.0313
+        },
+        {
+          "hex": "#a93928",
+          "coverage": 0.022
+        },
+        {
+          "hex": "#3f3725",
+          "coverage": 0.0131
+        }
+      ],
+      "detail": {
+        "energy": 13.1995
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-4-diagram.png",
+      "text": null
+    },
+    {
+      "id": "card-5-diagram",
+      "kind": "plate",
+      "note": "Small crease-pattern line diagram for card 5",
+      "grid": "H8:H8",
+      "bleed": true,
+      "box": {
+        "x": 0.7,
+        "y": 0.8,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 963,
+        "y": 614,
+        "w": 138,
+        "h": 77
+      },
+      "aspect": 1.7922,
+      "palette": [
+        {
+          "hex": "#cf3828",
+          "coverage": 0.6462
+        },
+        {
+          "hex": "#e9e5c8",
+          "coverage": 0.2891
+        },
+        {
+          "hex": "#b87765",
+          "coverage": 0.0403
+        },
+        {
+          "hex": "#ad3c2b",
+          "coverage": 0.0176
+        },
+        {
+          "hex": "#483828",
+          "coverage": 0.0067
+        }
+      ],
+      "detail": {
+        "energy": 6.5643
+      },
+      "medium": "raster",
+      "plate": "assets/plates/card-5-diagram.png",
+      "text": null
+    },
+    {
+      "id": "hedef-ekle",
+      "kind": "text",
+      "note": "'HEDEF EKLE' action label in small tracked caps, ink-fade gray",
+      "grid": "E9:F9",
+      "coverBox": {
+        "x": 0.4,
+        "y": 0.9,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.4172,
+        "y": 0.9154,
+        "w": 0.0872,
+        "h": 0.0469
+      },
+      "px": {
+        "x": 574,
+        "y": 703,
+        "w": 120,
+        "h": 36
+      },
+      "aspect": 3.3333,
+      "palette": [
+        {
+          "hex": "#d13a29",
+          "coverage": 0.8146
+        },
+        {
+          "hex": "#6c100d",
+          "coverage": 0.1208
+        },
+        {
+          "hex": "#b24234",
+          "coverage": 0.0521
+        },
+        {
+          "hex": "#480808",
+          "coverage": 0.0083
+        },
+        {
+          "hex": "#902010",
+          "coverage": 0.0042
+        }
+      ],
+      "detail": {
+        "energy": 9.2223
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 5,
+          "capHeightPx": 18.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6642,
+          "advTall": 0.6642,
+          "advX": null,
+          "gap": 0.5673,
+          "xRatio": 0.5979,
+          "stemW": 0.1434,
+          "contrast": 1.1491,
+          "serif": 0.934,
+          "densTall": 0.4551,
+          "densX": null,
+          "weight": 0.4551
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    }
+  ]
+}
