@@ -20,8 +20,17 @@
         <span class="telemetry-stat" id="lifeRatioDisplay" hidden>ÖMÜR: %00.000</span>
       </div>
       <div class="utility-actions">
-        <button type="button" class="btn-theme-toggle" id="btnThemeToggle" title="Tema Değiştir (E-Ink Kağıt / Gece Modu)">
-          <span id="themeIcon">☼ E-INK</span>
+        <button type="button" class="btn-theme-toggle" id="btnThemeToggle" title="Gece temasına geç" aria-label="Gece temasına geç" aria-pressed="false">
+          <span class="theme-toggle-content" aria-hidden="true">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="square" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5"></circle>
+              <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+              <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path>
+            </svg>
+            <span class="theme-toggle-label" id="themeLabel">E-INK</span>
+          </span>
         </button>
         <button type="button" class="btn-util" id="btnSettings" title="Doğum Tarihi ve Yaş Ayarları">
           ⚙ AYARLAR

@@ -145,7 +145,7 @@
   const btnBottomAdd = document.getElementById('btnBottomAdd');
   const btnSettings = document.getElementById('btnSettings');
   const btnThemeToggle = document.getElementById('btnThemeToggle');
-  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
 
   // Workspace Tabs Elements
   const tabActiveGoals = document.getElementById('tabActiveGoals');
@@ -1377,8 +1377,15 @@
   function applyTheme(theme) {
     state.theme = theme;
     document.documentElement.setAttribute('data-theme', theme);
-    if (themeIcon) {
-      themeIcon.textContent = theme === 'dark' ? '☾ GECE' : '☼ E-INK';
+    const isDark = theme === 'dark';
+    if (themeLabel) {
+      themeLabel.textContent = isDark ? 'GECE' : 'E-INK';
+    }
+    if (btnThemeToggle) {
+      const nextThemeLabel = isDark ? 'E-Ink temasına geç' : 'Gece temasına geç';
+      btnThemeToggle.setAttribute('aria-pressed', String(isDark));
+      btnThemeToggle.setAttribute('aria-label', nextThemeLabel);
+      btnThemeToggle.title = nextThemeLabel;
     }
   }
 

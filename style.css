@@ -145,6 +145,48 @@ html, body {
   box-shadow: var(--shadow-subtle);
 }
 
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6.25rem;
+  line-height: 1;
+}
+
+.theme-toggle-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  line-height: 1;
+}
+
+.theme-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 1.8;
+}
+
+.theme-icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  display: block;
+}
+
+.theme-toggle-label {
+  display: block;
+  min-width: 3.2rem;
+  text-align: left;
+}
+
 /* ==========================================================================
    2. MONUMENTAL AGE COUNTER (FIXED 9 DECIMALS) & CONTINUOUS TICKER
    ========================================================================== */
